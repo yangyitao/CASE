@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>vip课</title>
+		<style type="text/css">
+			*{margin:0;padding:0;list-style:none;}
+			html,body{height:100%;}
+			a img{border:none;}
+			#main{
+				width:100%;
+				height:100%;
+				min-width:1036px;
+				min-height:710px;
+				background:url("img/bg.jpg") 0% 0%/contain;
+				animation:mar 500s linear infinite;
+				-webkit-animation:mar 500s linear infinite;
+				}
+
+			#nav{width:100%;height:38px;padding-top:10px;background:#000;}
+			#nav .logo{width:1036px;height:20px;margin:0 auto;}
+
+			#content{
+				width:1036px;
+				height:595px;
+				margin:0 auto;
+				}
+			#content .left{
+				width:409px;
+				height:595px;
+				float:left;
+				
+				}
+			#content .right{
+				width:552px;
+				height:329px;
+				float:right;
+				margin-top:126px;
+				}
+			#content .right h2{
+				color:#fff;
+				font-size:50px;
+				font-weight:400;
+				}
+			#content .bot{
+				width:552px;
+				height:164px;
+				margin-top:50px;
+				}
+			#content .l-bot{
+				width:245px;
+				height:140px;
+				float:left;
+				}
+			#content .l-bot ul li a{
+				display:block;
+				width:245px;
+				height:60px;
+				}
+			#content .l-bot .l1 a{
+				background:url("img/download.png");
+				}
+			
+			#content .l-bot .l2{
+				margin-top:20px;
+				}
+
+			#content .l-bot .l2 a{
+				background:url("img/download.png") 0 -80px;
+				}
+			#content .r-bot{
+				width:138px;
+				height:164px;
+				float:left;
+				margin-left:20px;
+				}
+			#content .r-bot p{
+				color:#fff;
+				text-align:center;
+				font-size:12px;
+				font-family:"Microsoft yahei";
+				}
+			#content .l-bot div{
+				width:245px;
+				height:0px;
+				background:url("img/download.png") 0 -144px;
+				transition:.5s;
+				}
+			#content .l2:hover div{
+				height:165px;
+			}
+			@keyframes mar{
+				0%{background-position:0px bottom;}
+				100%{background-position:-10000px bottom;}
+				}
+			@-webkit-keyframes mar{
+				0%{background-position:0px bottom;}
+				100%{background-position:-10000px bottom;}
+				}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="nav">
+				<div class="logo">
+					<a href="#"><img src="img/logo.png" /></a>
+				</div>
+			</div>
+			<div id="content">
+				<div class="left"><img src="img/phone.png" /></div>
+				<div class="right">
+					<div class="top">
+						<img src="img/txt.png" />
+						<h2>看片神器，大片免费看!</h2>
+					</div>
+					<div class="bot">
+						<div class="l-bot">
+							<ul>
+								<li class="l1"><a href="javascript:void(0)"></a></li>
+								<li class="l2">
+									<a href="javascript:void(0)"></a>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+						<div class="r-bot">
+							<img src="img/qr.png" width="138" height="138"/>
+							<p>二维码扫描下载</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bbb" style="height:1000px;"></div>
+	</body>
+</html>
+<script>
+</script>

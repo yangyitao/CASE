@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	*{margin:0px;padding:0px;}
+	.box{
+			width:670px;height:630px;
+			margin:0px auto;
+			}
+	.box .con{
+				width:670px;height:500px;
+				background:url("images/2.jpg");
+				}
+	.box .con ul li{
+					width:70px;height:50px;background:#ddd;
+					list-style-type:none;
+					text-align:center;line-height:50px;
+					font-size:15px;
+					margin-bottom:1px;
+					opacity:0.9;
+					}
+	.box .con ul li:hover{
+							color:#a05fd1;
+							border-left:6px solid #a05fd1;
+							width:58px;
+							padding-right:6px;
+							}
+	a{text-decoration:none;color:#000;}
+  </style>
+ </head>
+ <body>
+	<div class="box">
+		<img src="images/title.png" />
+		<div class="con">
+			<ul>
+				<li>态度</li>
+				<li>最前沿</li>
+				<li>最话题</li>
+				<li>事件</li>
+				<li>推荐</li>
+				<li>尚惠</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('.box .con ul li').hover(function(){
+			var i=$(this).index();
+			$('.box .con').css("background",'url(images/'+i+'.jpg)');
+		})
+	</script>
+ </body>
+</html>

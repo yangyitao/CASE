@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>标题</title>
+	<meta name="Keywords" content=""/>
+	<meta name="description" content=""/>
+	<style type="text/css">
+		*{margin:0px;padding:0px;}
+		img{border:none;}
+		#bg{width:320px;height:345px;background:#000;margin:200px auto 0;}
+		#main{width:320px;height:345px;position:relative;overflow:hidden;
+		opacity:.8;}
+		#main:hover{opacity:1;}
+		#pic{width:1920px;height:345px;position:absolute;}
+		#pic ul li{width:320px;height:345px;list-style:none;float:left;}
+		#pic ul li p{text-align:center;color:#fff;font-size:14px;
+			width:320px;font-family:'Microsoft yahei';position:absolute;bottom:10px;}
+		#but{width:84px;height:14px;background:#fff;position:absolute;
+			bottom:40px;left:118px;border-radius:7px;opacity:.7;}
+		#but ul li{float:left;list-style:none;width:10px;height:10px;
+			border-radius:5px;background:#000;margin:2px 2px;cursor:pointer;}
+		#but ul li.cho{background:#E73100;}
+		#main .button{width:50px;height:50px;background:rgba(0,0,0,.2);
+			position:absolute;top:147px;color:#fff;text-align:center;cursor:pointer;
+			line-height:50px;font-size:30px;font-weight:700;display:none;}
+		#main:hover .button{display:block;}
+		#main .button:hover{background:rgba(0,0,0,.5);}
+		#main .left-b{left:0;}
+		#main .right-b{right:0;}
+	</style>
+</head>
+<body>
+	<div id="bg">
+		<div id="main">
+			<!--图片区 开始-->
+			<div id="pic">
+				<ul>
+					<li style="display:block;">
+						<a href="#"><img src="img/1.jpg"/></a>
+						<p>中南林科大校花校草 短裤露脐装带你逛校园</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/2.jpg" /></a>
+						<p>日本男校举办“最美校花”比赛 奇葩事真多</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/3.jpg" /></a>
+						<p>东莞女大学生的兼职模特生活 月入三万</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/4.jpg" /></a>
+						<p>网上发现一枚酒窝女神 笑起来真的好美！</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/5.jpg" /></a>
+						<p>国际模特大赛俊男靓女齐聚 佳丽光腿坐姿豪放</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/6.jpg" /></a>
+						<p>曝卡卡与妻子离婚 终结9年婚姻还相信爱情吗?</p>
+					</li>
+				</ul>
+			</div>
+			<!--图片区 结束-->
+			<!--按钮区 开始-->
+			<div id="but">
+				<ul>
+					<li class="cho"></li><li></li><li></li><li></li><li></li><li></li>
+				</ul>
+			</div>
+			<!--按钮区 结束-->
+			<!--左按钮-->
+			<div class="left-b button">&lt;</div>
+			<!--右按钮-->
+			<div class="right-b button">&gt;</div>
+		</div>
+	</div>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		var a = 0;
+		var b = 0;
+		var Play = null;
+		//鼠标点击底部按钮事件
+		$('#but ul li').click(function(){
+			a = $(this).index();
+			b = -a*320;
+			$(this).addClass('cho').siblings().removeClass('cho');/*按钮变色*/
+			$('#pic').animate({'left':b+'px'},500)/*换图*/
+		});
+
+		//鼠标悬停 轮播停止/启动
+		$('#main').hover(function(){
+			clearInterval(Play);
+		},function(){
+			auto();
+		})
+
+		//封装
+		function com(){
+				$('#but ul li').eq(a).addClass('cho').siblings().removeClass('cho');
+				$('#pic').animate({'left':b+'px'},500);
+		}
+
+		//轮播函数
+		function auto(){
+			Play=setInterval(function(){
+				a++;
+				b = -a*320;
+				if(a<6){
+					com();
+					if(a == 5){a=-1};
+				}else{
+					a = -1;
+				}
+			},2000)
+		};
+		//轮播执行
+		auto();
+
+		//右按钮
+		$('#main .right-b').click(function(){
+			a++;
+			b = -a*320;
+			if(a<6){
+				com();
+				if(a >= 5){a=-1};
+			}else{
+				a = -1;
+			}
+		})
+
+		//左按钮
+		$('#main .left-b').click(function(){
+			a--;
+			b = -a*320;
+			if(a>-1){
+				com();
+				if(a == 0){a=6};
+			}else{
+				a = 6;
+			}
+		})
+	</script>
+</body>
+</html>

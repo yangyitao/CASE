@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!-- saved from url=(0022)http://blog.csdn.net/electroniXtar/ -->
+	<head>
+	<!--声明当前页面的编码集：charset=gbk，gb2312（中文编码），utf-8国际编码-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--网页三要素-->
+	<title>网页标题</title>
+	<meta name="Keywords" content="关键词，关键词" />
+	<meta name="description" content="" />
+    <style>
+	*{ margin:0; padding:0;}
+	body{ height:5000px;}
+	#main{background:url("img/1.jpg") no-repeat ; background-size:100%;position:relative; overflow:hidden;}
+	#left,#right{ width:50%; height:100px; background:yellow; position:absolute;}
+	#left{background:url("img/2.jpg") no-repeat ; background-size:100%;}
+	#right{background:url("img/3.jpg") no-repeat ; background-size:100%;}
+	#left{left:0;animation:oL 3s linear;animation-delay:2s;animation-fill-mode: forwards;}
+	#right{ right:0; animation:oR 3s linear;animation-delay:2s;animation-fill-mode: forwards;}
+	@keyframes oR{
+		from {right:0;}
+		to { right:-50%;}
+	}
+	@keyframes oL{
+		from {left:0;}
+		to { left:-50%;}
+	}
+	</style>
+</head>
+	<body>
+   <div id="main">
+   	<div id="left"></div>
+    <div id="right"></div>
+   </div>
+		
+	</body>
+</html>
+<script>
+window.onload=function()
+{
+	
+	var oL=document.getElementById("left");
+	var oR=document.getElementById("right");
+	var oM=document.getElementById("main");
+	function hei()
+	{
+		var heig = document.documentElement.clientHeight;
+		var wid=document.documentElement.clientWidth;
+		oM.style.width=wid+"px";
+		oM.style.height=heig+"px";
+		oL.style.height=heig+"px";
+		oR.style.height=heig+"px";
+	}
+	hei()
+	window.onresize = function(){hei();}
+}
+</script>

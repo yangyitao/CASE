@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>weirenwu</title>
+  <style type="text/css">
+	*{margin:0;padding:0px;}
+	.web{width:100%;height:910px;position:relative;}
+	.con{width:100%;height:910px;overflow:hidden;position:relative;}
+	.con ul li{
+		width:100%;height:910px;position:absolute;top:0px;left:-100%;
+		list-style-type:none;
+		}
+	.con .img1{margin:120px auto 20px;display:block;}
+	.con .img2{margin:0px auto;display:block;}
+	.button{
+		width:350px;height:110px;
+		margin:70px auto;
+		background:url("images/qrcode.png") no-repeat;
+		background-position:right center;background-size:90px;
+		}
+	.con ul li a{
+		width:250px;height:50px;background:#fff;
+		display:block;border-radius:2px;margin-bottom:5px;
+		text-decoration:none;text-align:center;line-height:50px;
+		font-size:20px;font-family:"微软雅黑";color:#a04f00;
+		font-weight:bold;
+		}
+	.nav{
+		width:750px;height:102px;
+		position:absolute;left:50%;margin-left:-375px;top:655px;
+		}
+	.dot{
+		width:780px;height:2px;margin-left:-30px;
+		margin-top:24px;background:url("images/dot.png");
+		}
+	.bar{
+		width:150px;height:2px;background:#fff;
+		}
+	.nav ul{
+		position:absolute;left:0px;top:0px;
+		}
+	.nav ul li{
+		width:100px;height:102px;cursor:pointer;
+		list-style-type:none;float:left;margin-left:65px;
+		text-align:center;font-size:14px;color:#fff;
+		}
+	.nav ul .color_blue{color:#428bca;}
+	.nav ul .color_white{color:#fff;}
+	.nav ul li img{display:block;margin:0px auto 20px;}
+  </style>
+ </head>
+ <body>
+	<div class="web">
+		<div class="con">
+			<ul>
+				<li style="background:url(images/bg1.jpg);left:0px;">
+					<img class="img1" src="images/img1.png" />
+					<img class="img2" src="images/img2.png" />
+					<div class="button">
+						<a href="http://test.baidu.com/crowdtest/file/downloadandcount?name=AddressUGC_HOME&_from=microtask">Android 版下载</a>
+						<a href="http://test.baidu.com/app/appGetVersion/redirectIOS?_from=microtask">iOS 版下载</a>
+					</div>
+				</li>
+				<li style="background:url(images/bg2.png)"></li>
+				<li style="background:url(images/bg3.png)"></li>
+				<li style="background:url(images/bg4.png)"></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<div class="dot">
+				<div class="bar"></div>
+			</div>
+			<ul>
+				<li class="color_white"><img src="images/0.png" />首页</li>
+				<li><img src="images/nav1.png" />微任务介绍</li>
+				<li><img src="images/nav2.png" />精美礼品</li>
+				<li><img src="images/nav3.png" />意见反馈</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var d=0; //鼠标当前点击点
+		var z=0; //鼠标之前点击点
+		var s=0; //进度条的距离
+		var time=0; //存放定时函数
+		//鼠标点击到li上改变li上的图片和切换内容开始
+		$(".nav ul li").click(function(){
+			z=d;
+			d=$(this).index(); //获取到鼠标当前点击的li的下标
+		$(this).addClass("color_blue").siblings().removeClass("color_blue");
+		//找到当前点击的li换一个图片
+		$(this).find("img").attr("src",'images/'+d+'.png');
+		//如果当前点不等于之前点才改变之前点的图片
+		if(d!=z)
+		$(".nav ul li").eq(z).find("img").attr("src",'images/nav'+z+'.png');
+		//按照进度条的距离动态移动.bar的距离
+		s=160+d*160;
+		$(".bar").animate({width:s},500);
+		//如果当前点大于之前点就往左边移动
+		if(d>z)
+		{
+			$(".con ul li").eq(z).animate({left:"-100%"},500);
+			$(".con ul li").eq(d).css("left","100%");
+			$(".con ul li").eq(d).animate({left:"0px"},500);
+		}
+		//如果当前点小于之前点就往右边移动
+		else if(d<z)
+		{
+			$(".con ul li").eq(z).animate({left:"100%"},500);
+			$(".con ul li").eq(d).css("left","-100%");
+			$(".con ul li").eq(d).animate({left:"0px"},500);
+		}
+		})
+		//鼠标点击到li上改变li上的图片和切换内容结束
+		//自动播放开始
+		function junmper(){
+			z=d;
+			d++;
+			if(d>3)
+			d=0;
+			$(".con ul li").eq(z).animate({left:"-100%"},500);
+			$(".con ul li").eq(d).css("left","100%");
+			$(".con ul li").eq(d).animate({left:"0px"},500);
+		$(".nav ul li").eq(d).find("img").attr("src",'images/'+d+'.png');
+		$(".nav ul li").eq(z).find("img").attr("src",'images/nav'+z+'.png');
+		s=160+d*160;
+		$(".bar").animate({width:s},500);
+				z=d;
+		}
+		time=setInterval("junmper()",10000);
+		//自动播放结束
+		//鼠标移动到li上停止自动播放并且让文字颜色变成白色
+		$(".nav ul li").hover(function(){
+			clearInterval(time);
+			$(this).addClass("color_white");
+		},function(){
+			//鼠标离开li时启动自动播放并且让文字颜色变成蓝色
+			time=setInterval("junmper()",4000);
+			$(this).removeClass("color_white");
+		})
+	</script>
+ </body>
+</html>

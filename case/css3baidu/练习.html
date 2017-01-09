@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>哈哈</title>
+<style>
+    *{
+        padding: 0;
+        margin:0;
+    }
+    html{
+        font-size: 62.5%;
+    }
+    body{
+        width: 100%;
+        background: url(images/bj.jpg) no-repeat;
+        background-size: cover;
+        padding: 10rem 0;
+    }
+    .clearfix:after, .clearfix:before{
+        display: table;
+        content: "";
+    }
+    .clearfix:after{
+        clear: both;
+    }
+    .clearfix{
+        *zoom:1;
+    }
+    .wrapper{
+        width: 860px;
+        height: 310px;
+        margin:0 auto;
+        background:rgba(255,255,255,0.8);
+    }
+    ul{
+        margin-left:0;
+        margin-top: 0;
+    }
+    .wrapper li{
+        width: 170px;
+        height: 150px;
+        list-style: none;
+        float: left;
+    }
+    img{
+        width: 160px;
+        height: 140px;
+        display: block;
+        transition:all .5s linear;
+    }
+    .wrapper li a{
+        width:160px;
+        height: 140px;
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 10px;
+        position: relative;
+    }
+    .img{
+        overflow: hidden;
+    }
+    .wrapper li span{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 30px;
+        width: 160px;
+        height: 30px;
+        background: rgba(0,0,0,0.2);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .wrapper li a:hover img{
+        transform:scale(1.1,1.1);
+    }
+    .wrapper li a:hover span{
+        color: red;
+    }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <ul class="first clearfix">
+        <li>
+            <a href=""><div class="img"><img src="images/1.jpg" height="168" width="192" alt=""></div><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/2.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/3.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/4.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/5.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/6.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/7.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/8.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/9.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+        <li>
+            <a href=""><img src="images/10.jpg" height="168" width="192" alt=""><span>摄影</span></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

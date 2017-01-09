@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="UTF-8"/> <!-- 编码集 常用有 UTF-8/gbk/gb2312 -->
+	
+	<!-- 网页三要素 == 关键词、描述、标题 -->
+	<meta name="Keywords" content=""/>
+	<meta name="Description" content=""/>
+	<title>网页标题</title>
+	<link rel="Shortcut Icon" href="img/ico.ico" />
+	<style>
+		*{margin:0;padding:0;font-family:"Microsoft yahei";}
+		a img{border:none;}
+		ul{list-style-type:none;}
+		body{background:url("img/bg.png");}
+		#nav{width:940px;height:52px;margin:0 auto;}
+		#nav h1{width:158px;height:52px;float:left;}
+		#nav h1 a{display:block;width:158px;height:52px;}
+		#nav ul{width:630px;height:52px;float:right;}
+		#nav ul li{float:left;line-height:52px;margin-left:60px;}
+		#nav ul li a{color:#fff;font-size:14px;text-decoration:none;}
+		#nav ul li a:hover{color:#50D9CF;}
+
+		#show{width:940px;height:610px;margin:20px auto 0;background:#000;}
+		#show ul{width:940px;height:610px;}
+		#show ul li{float:left;width:235px;height:610px;opacity:.5;transition:.5s;}
+		#show ul li:hover{opacity:1;}
+		#show .l1{background:url("img/1.jpg");}
+		#show .l2{background:url("img/2.jpg");}
+		#show .l3{background:url("img/3.jpg");}
+		#show .l4{background:url("img/4.jpg");}
+		#show .info{color:#fff;width:200px;height:135px;background:rgba(0,0,0,.5);
+			margin:450px auto 0;text-align:center;position:relative;cursor:default;}
+		#show .info h2{line-height:60px;font-size:20px;font-weight:100;
+			border-bottom:1px solid #fff;}
+		#show .info p{font-size:12px;margin-top:10px;}
+		#show .detail{width:200px;height:135px;position:absolute;top:20px;
+			color:#000;text-align:left;text-indent:20px;cursor:default;opacity:0;
+			transition:.5s;background:#E7E7E7;box-shadow:0 0 10px #fff;}
+		#show ul li:hover .detail{opacity:1;top:0;}
+		#show .detail p{margin:0;}
+		#show .detail .p1{line-height:35px;font-size:14px;border-bottom:1px solid #d4d4d4;}
+		#show .detail .p2{border-top:1px solid #f1f1f1;padding:7px 0;}
+		#show .detail .p3{padding-bottom:20px;border-bottom:1px solid #d4d4d4;}
+		#show .detail .p4{border-top:1px solid #f1f1f1;color:#4B8FD0;}
+	</style>
+ </head>
+ <body>
+	<!--顶部导航 开始-->
+	<div id="nav">
+		<h1><a href="#"><img src="img/logo.png" /></a></h1>
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">电影</a></li>
+			<li><a href="#">电视剧</a></li>
+			<li><a href="#">综艺</a></li>
+			<li><a href="#">动漫</a></li>
+			<li><a href="#">直播</a></li>
+			<li><a href="#">专题</a></li>
+		</ul>
+	</div>
+	<!--顶部导航 结束-->
+
+	<!--展示区 开始-->
+		<div id="show">
+			<ul>
+				<li class="l1">
+					<div class="info">
+						<h2>《小时代:青木时代》</h2>
+						<p>2013-08-09</p>
+						<p>友情入泥淖 平地起波澜</p>
+						<div class="detail">
+							<p class="p1">友谊挑战人性的暗黑面</p>
+							<p class="p2">导演：郭敬明</p>
+							<p class="p3">主演：杨幂 / 郭采洁 / 郭碧婷</p>
+							<p class="p4">1680人想看</p>
+						</div>
+					</div>
+				</li>
+				<li class="l2">
+					<div class="info">
+					<h2>《一夜惊喜》</h2>
+					<p>2013-08-09</p>
+					<p>范冰冰与萌男的性感喜剧</p>
+					<!--鼠标移动白色框 开始-->
+					<div class="detail">
+						<p class="p1">女神一夜情迷风流孕事</p>
+						<p class="p2">导演：金依萌 </p>
+						<p class="p3">主演：范冰冰 / 李治廷 / 蒋劲夫</p>
+						<p class="p4">1275人想看</p>
+					</div>
+					<!--鼠标移动白色框 结束-->
+				</div>
+				</li>
+				<li class="l3">
+					<div class="info">
+						<h2>《一场风花雪月的事》</h2>
+						<p>2013-08-09</p>
+						<p>黄杨二人重塑海岩经典</p>
+						<!--鼠标移动白色框 开始-->
+						<div class="detail">
+							<p class="p1">黄晓明baby风雨情侣档</p>
+							<p class="p2">导演：高群书 </p>
+							<p class="p3">主演：黄晓明 / 杨颖 / 巍子</p>
+							<p class="p4">340人想看</p>
+						</div>
+						<!--鼠标移动白色框 结束-->
+					</div>
+				</li>
+				<li class="l4">
+					<div class="info">
+						<h2>《被偷走的那五年》</h2>
+						<p>2013-08-22</p>
+						<p>白百何、张孝全虐心情爱</p>
+						<!--鼠标移动白色框 开始-->
+						<div class="detail">
+							<p class="p1">白百合车祸失忆重遇情人</p>
+							<p class="p2">导演：黄真真 </p>
+							<p class="p3">主演：白百何 / 张孝全 / 范玮琪</p>
+							<p class="p4">165人想看</p>
+						</div>
+					<!--鼠标移动白色框 结束-->
+					</div>
+				</li>
+			</ul>
+		</div>
+	<!--展示区 结束-->
+
+	
+	</script>
+ </body>
+</html>

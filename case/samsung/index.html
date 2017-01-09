@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>samsung官网</title>
+	<style type="text/css">
+		*{margin:0px;padding:0px;list-style-type:none;}
+		#main{
+					width:100%;height:600px;position:relative;
+					}
+		.pic{
+					width:100%;height:600px;overflow:hidden;position:relative;
+					}
+		.pic ul li{
+					width:100%;height:600px;position:absolute;top:0px;
+					left:100%;
+								}
+		.pic ul li img{height:600px;width:100%;}
+		.prev{
+			width:37px;height:66px;background:url("images/button.png");
+			position:absolute;left:20px;top:50%;margin-top:-33px;
+			display:none;cursor:pointer;
+			}
+		.next{
+			width:37px;height:66px;background:url("images/button.png");
+			position:absolute;right:20px;top:50%;margin-top:-33px;
+			background-position:0px -66px;
+			display:none;cursor:pointer;
+			}
+		.nav{
+					width:160px;height:22px;position:absolute;
+					left:50%;bottom:30px;margin-left:-80px;
+					}
+		.nav ul{width:128px;height:22px;float:right;}
+		.nav ul li{
+					width:22px;height:22px;float:left;cursor:pointer;
+					background:url("images/bg_white.png");float:left;
+					list-style-type:none;margin-right:10px;cursor:pointer;
+				  }
+		.nav ul .bg{background:url("images/bg_blue.png");}
+		.nav .play{
+			width:22px;height:22px;background:url("images/play.png");
+			position:absolute;left:0px;top:0px;z-index:-1;cursor:pointer;
+			}
+		.nav .pause{
+			width:22px;height:22px;background:url("images/pause.png");
+			position:absolute;left:0px;top:0px;z-index:1;cursor:pointer;
+			}
+	</style>
+ </head>
+ <body>
+		<div id="main">
+			<div class="pic">
+				<ul>
+					<li style="left:0px;"><img src="images/1.jpg" /></li>
+					<li><img src="images/2.jpg" /></li>
+					<li><img src="images/3.jpg" /></li>
+					<li><img src="images/4.jpg" /></li>
+				</ul>
+			</div>
+			<div class="prev"></div>
+			<div class="next"></div>
+			<div class="nav">
+				<span class="play"></span>
+				<span class="pause"></span>
+				<ul>
+					<li class="bg"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" >
+			var a =0;
+			var b =0;
+			var time=0;
+			var flag=0;
+
+			$("#main").hover(function(){
+				$(".prev").css("display","block");
+				$(".next").css("display","block");
+			},function(){
+				$(".prev").css("display","none");
+				$(".next").css("display","none");
+			})
+
+			$(".nav ul li").click(function(){
+				$(this).addClass("bg").siblings().removeClass("bg");
+				a =$(this).index();
+				if(a>b)
+				{
+					$(".pic ul li").eq(a).css("left","100%");
+					$(".pic ul li").eq(a).stop().animate({left:"0px"},300);
+					$(".pic ul li").eq(b).stop().animate({left:"-100%"},300);
+					b = a;
+				}
+				else if(a<b){
+					$(".pic ul li").eq(a).css("left","-100%");
+					$(".pic ul li").eq(a).stop().animate({left:"0px"},300);
+					$(".pic ul li").eq(b).stop().animate({left:"100%"},300);
+					b = a;	
+				}
+			})
+			$(".nav ul li").hover(function(){
+				clearInterval(time);
+			},function(){
+				if(flag==0)
+				time=setInterval("junmper()",4000);
+			})
+			function junmper(){
+					a++;
+					if(a>3)
+					a=0;
+					$(".pic ul li").eq(a).css("left","100%");
+					$(".pic ul li").eq(a).stop().animate({left:"0px"},300);
+					$(".pic ul li").eq(b).stop().animate({left:"-100%"},300);
+					b = a;
+					$(".nav ul li").eq(a).addClass("bg").siblings().removeClass("bg");
+			}
+			time=setInterval("junmper()",4000);
+
+			$(".pause").click(function(){
+				$(this).css("z-index","-1");
+				$(".play").css("z-index","1");
+				clearInterval(time);
+				flag=1;
+			})
+
+			$(".play").click(function(){
+				$(this).css("z-index","-1");
+				$(".pause").css("z-index","1");
+				time=setInterval("junmper()",4000);
+				flag=0;
+			})
+			$(".prev").click(function(){
+					a++;
+					if(a>3)
+					a=0;
+					$(".pic ul li").eq(a).css("left","100%");
+					$(".pic ul li").eq(a).stop().animate({left:"0px"},300);
+					$(".pic ul li").eq(b).stop().animate({left:"-100%"},300);
+					b = a;
+					$(".nav ul li").eq(a).addClass("bg").siblings().removeClass("bg");
+			})
+			$(".next").click(function(){
+					a--;
+					if(a<0)
+					a=3;
+					$(".pic ul li").eq(a).css("left","-100%");
+					$(".pic ul li").eq(a).stop().animate({left:"0px"},300);
+					$(".pic ul li").eq(b).stop().animate({left:"100%"},300);
+					b = a;
+					$(".nav ul li").eq(a).addClass("bg").siblings().removeClass("bg");
+			})
+			$(".prev").hover(function(){
+				clearInterval(time);
+			},function(){
+				if(flag==0)
+				time=setInterval("junmper()",4000);
+			})
+			$(".next").hover(function(){
+				clearInterval(time);
+			},function(){
+				if(flag==0)
+				time=setInterval("junmper()",4000);
+			})
+		</script>
+ </body>
+</html>

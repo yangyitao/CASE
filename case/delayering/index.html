@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{padding:0; margin:0;}/* *通配符 解决浏览器兼容问题 边距 */
+	body{background:url("img/pifu7.jpg") no-repeat center fixed;/*为body 加上一个背景图片*/}
+	#login{width:400px; height:500px;background:rgba(255,255,255,0.5); margin:60px auto 30px auto;}
+	#login .login_top{height:60px;background:rgba(29,4,32,0.5); color:#333; font-size:18px; text-align:center;/*文字水平居中*/ line-height:60px; /*文字垂直居中*/ font-weight:600;}
+	#login .login_logo a{display:block;/*行元素-》内容决定宽度和高度 -》 转为块*/width:180px; height:180px;margin:20px auto; background:rgba(12, 2, 2, 0.31) url("img/login_logo.png")no-repeat center ;/*多重背景 css3*/ border-radius:50%;}
+	/*公用的input*/
+	input{width:340px; height:45px; margin:5px 0px;border-radius:5px;border:none; font-size:14px;}
+	#login  .login_input{ width:340px; margin:0px auto;}
+	#login  .login_input input{  background:rgba(62, 81, 188, 0.4); padding-left:12px;color:#120606; }
+	#login  .login_btn{ width:340px; margin:10px auto;}
+	#login  .login_btn input{ background:#dc5a5a; color:#fff; box-shadow:0px 5px 0px #992f2f; /*css3阴影 水平 垂直 扩散*/}
+	#login  .login_btn input:hover{box-shadow:0px -5px 0px #992f2f;}
+  </style>
+ </head>
+ <body>
+	<!--div  盒子 -》 一个大盒子里面 四小盒子-》 取名 -->
+		<div id="login">
+			<div class="login_top">登陆 潭州学院</div>
+			<div class="login_logo">
+				<a href="http://www.baidu.com"></a>
+			</div>
+			<!--action  提交到那个页面去 -->
+			<form action="http://www.baidu.com" method="get">
+			<div class="login_input">
+				<input type="text" placeholder="你的名字" required/>
+				<input type="password" placeholder="你的密码" required/>
+			</div>
+			<div class="login_btn">
+				<input type="submit" value="登陆"/>
+			</div>
+			</form>
+		</div>
+ </body>
+</html>

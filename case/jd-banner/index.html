@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+	<head>
+		<!--css 层叠样式表 包装 衣服-->
+		<style type="text/css">
+			*{margin:0;padding:0;}/*清除默认内外边距*/
+
+			#main{
+				width:670px;  /*宽度*/
+				height:240px; /*高度*/
+				/*background:#f39; /*背景*/
+				position:relative;/*相对定位*/
+				margin:250px auto 0;
+			}
+
+			#pic{
+				width:670px;
+				height:240px;
+				overflow:hidden;/*超出隐藏*/
+				position:relative;
+			}
+
+			#but{
+				width:170px;
+				height:22px;
+				/*border:1px solid #3ff;*/
+				position:absolute;/*绝对定位*/
+				bottom:5px;
+				right:0;
+			}
+
+			#but ul li{
+				list-style-type:none;/*除去黑点*/
+				float:left;/*向左看齐*/
+				height:22px;
+				width:22px;
+				background:#999;
+				border-radius:13px;
+				text-align:center;/*水平居中*/
+				line-height:22px;
+				color:#fff;
+				font-family:"微软雅黑";
+				font-size:12px;
+				margin-right:5px;
+			}
+
+			#but ul .hov{background:#E4393C;}
+			img{display:none;position:absolute;top:0;left:0;}
+		</style>
+	</head>
+	<body>
+		<!--div 盒子模型-->
+		<div id="main">
+			<!--图片区 开始-->
+			<div id="pic">
+				<img src="images/1.jpg" style="display:block;" />
+				<img src="images/2.jpg" />
+				<img src="images/3.jpg" />
+				<img src="images/4.jpg" />
+				<img src="images/5.jpg" />
+				<img src="images/6.jpg" />
+			</div>
+			<!--图片区 结束-->
+			<!--按钮 开始-->
+			<div id="but">
+				<ul>
+					<li class="hov">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+				</ul>
+			</div>
+			<!--按钮 结束-->
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		var a = 0;
+		var Play = null;
+		$("#but ul li").hover(function(){
+			clearInterval(Play);
+			a = $(this).index();//获取当前序列号
+			$(this).addClass("hov").siblings().removeClass("hov");
+			$("#pic img").eq(a).fadeIn().siblings().hide();//让图片对应显示
+		},function(){
+			auto();
+		});
+
+		function auto(){
+			Play = setInterval(function(){
+				a++;
+				if(a<6){
+					if(a == 5){a=-1;};
+					$("#but ul li").eq(a).addClass("hov").siblings().removeClass("hov");
+					$("#pic img").eq(a).fadeIn().siblings().hide();
+				}else{
+					a = -1;
+				}
+			},3000)
+		};
+		auto();
+	</script>
+</html>

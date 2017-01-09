@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            background: url(img/bj.jpg) no-repeat;
+            background-size: cover;
+        }
+    .boximg{
+       width:60%;
+       height: 24rem;
+       position: absolute;
+       bottom: 1rem;
+       right: 1rem;
+       perspective:1000px;
+    }
+    .img3D{
+        float: left;
+        margin-right: 6rem;
+        transform-style:preserve-3D;
+        transform-origin:50%;
+        animation:move 3s linear infinite;
+    }
+    .img3D:last-child{
+        margin-right: 0;
+    }
+    .img3D ul{
+        width: 230px;
+        height: 230px;
+        position: relative;
+    }
+    .img3D ul li{
+        width: 230px;
+        height: 230px;
+        position: absolute;
+        left:0;
+        top:0;
+        opacity: 1;
+        border: 10px solid rgba(0,0,0,0.8);
+    }
+    .img3D ul li:nth-child(1){
+        transform:rotateY(-120deg) translateZ(70px)
+    }
+    .img3D ul li:nth-child(2){
+        transform:rotateY(0deg) translateZ(70px)
+    }
+    .img3D ul li:nth-child(3){
+        transform:rotateY(120deg) translateZ(70px)
+    }
+    @keyframes move{
+        0%{
+            transform:rotateY(0deg)
+        }
+        100%{
+            transform:rotateY(360deg)
+        }
+    }
+    </style>
+</head>
+<body>
+  <div class="boximg">
+       <div class="img3D">
+          <ul>
+            <li>
+                <img src="img/1.jpg" height="230" width="230" alt="">
+            </li>
+            <li>
+                <img src="img/2.jpg" height="230" width="230" alt="">
+            </li>
+            <li>
+                <img src="img/3.jpg" height="230" width="230" alt="">
+            </li>
+          </ul>
+      </div>
+      <div class="img3D">
+          <ul>
+              <li>
+                <img src="img/4.jpg" height="230" width="230" alt="">
+            </li>
+            <li>
+                <img src="img/5.jpg" height="230" width="230" alt="">
+            </li>
+            <li>
+                <img src="img/6.jpg" height="230" width="230" alt="">
+            </li>
+          </ul>
+      </div>
+      <div class="img3D">
+          <ul>
+            <li>
+                <img src="img/7.jpg" height="230" width="230" alt="">
+            </li>
+            <li>
+                <img src="img/8.jpg" height="230" width="230" alt="">
+            </li>
+           <li>
+                 <img src="img/9.jpg" height="230" width="230" alt="">
+            </li>
+          </ul>
+      </div>
+  </div>
+</body>
+</html>

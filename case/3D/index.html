@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{margin:0; padding:0;}/*去掉浏览器默认样式*/
+	body{background:url("img/bj.jpg") no-repeat;background-size:cover;/*把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。*/}
+	#product{width:900px; height:300px;position:absolute; bottom:10px; right:10px;perspective:1000px;/*3d 元素距离你眼球的距离*/}
+	#product .scene{width:240px; height:240px; float:left;  margin-right:60px; transform-style:preserve-3D;/*置为3D 模式*/ transform-origin:50%;/*设置旋转中心点*/-webkit-animation:slide 9s linear infinite; }
+	/*#product .scene:hover{animation:slide 9s linear infinite;}*/
+	#product .scene:nth-child(1){-webkit-animation-delay:3s;}
+	#product .scene:nth-child(2){-webkit-animation-delay:9s;}
+	#product .scene:nth-child(3){-webkit-animation-delay:15s;}
+	#product .scene ul{}
+	#product .scene ul li{list-style:none;width:230px; height:230px;padding:5px; position:absolute; opacity:0.8; backface-visibility:hidden;/*设置不正面对着我们的隐藏*/ background:rgba(255,255,255,0.7)}
+	#product .scene ul li:nth-child(1){transform:rotateY(0deg) translateZ(70px);}
+	#product .scene ul li:nth-child(2){ transform:rotateY(-120deg)translateZ(70px);}
+	#product .scene ul li:nth-child(3){transform:rotateY(120deg)translateZ(70px);}
+	/*css3 动画的开始*/
+	@-webkit-keyframes slide{
+		from{transform:rotateY(0deg);}
+		to{transform:rotateY(-360deg);}
+	}
+  </style>
+ </head>
+ <body>
+		<div id="product">
+			<div class="scene">
+				<ul>
+					<li><img src="img/1.jpg"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+				</ul>
+			</div>
+
+			<div class="scene">
+				<ul>
+					<li><img src="img/4.jpg"/></li>
+					<li><img src="img/5.jpg"/></li>
+					<li><img src="img/6.jpg"/></li>
+				</ul>
+			</div>
+
+			<div class="scene">
+				<ul>
+					<li><img src="img/7.jpg"/></li>
+					<li><img src="img/8.jpg"/></li>
+					<li><img src="img/9.jpg"/></li>
+				</ul>
+			</div>
+		</div>
+ </body>
+</html>

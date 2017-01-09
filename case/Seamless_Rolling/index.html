@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{margin:0; padding:0px;}/*解决浏览器兼容问题*/
+	body{background:url("img/bg.jpg")no-repeat 100% center; height:680px;}
+	#box{width:720px; height:350px; position:fixed; top:200px; left:-40px; perspective:1900px;/* 设置一个看里面元素的距离*/padding:20px; }
+	#main_a{width:720px; height:190px;background:#fff;overflow: hidden ; position:absolute;}
+	#main_b{width:720px; height:190px;background:#fff;overflow: hidden ; position:absolute; transform:rotateX(-110deg); top:160px; left:20px; opacity:0.2;}
+	ul{width:2720px; position:absolute; top:20px; left:0px; /*播放次数*/-webkit-animation:slide 20S infinite /*(无限循环)*/ linear/*速度一致*/ ;}
+	ul li{float:left;/*并排展示*/ margin:0px 5px; list-style:none; }
+	/*设置虚线矢量图*/
+	svg{position:absolute; left:-800px; top:3px; /*播放次数*/-webkit-animation:slide2 20S infinite /*(无限循环)*/ linear/*速度一致*/ ;}
+	svg line{ stroke:#20252b; fill:none; stroke-dasharray:15 20;} /*svg  虚线点长度  虚线间隔长度*/
+	svg .top{stroke-width:27px;}
+	svg .bottom{stroke-width:14px;}
+	/*动画规则*/
+		@-webkit-keyframes slide { /*动画规则 动画名称*/
+		from { left :0px ; } /* 从{ .... } */
+		to { left : -800px ; } /* 到{ .... } */
+		}
+		@-webkit-keyframes slide2 { /*动画规则 动画名称*/
+		from { left : -800px; } /* 从{ .... } */
+		to { left :0px; } /* 到{ .... } */
+		}
+  </style>
+ </head>
+ <body>
+	 <div id="box">
+			<div id="main_a">
+				<ul>
+				<li> <img src="img/pic1.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic2.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic3.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic4.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic5.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic1.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic2.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic3.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic4.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic5.jpg" width="150px" height="150px" alt=""/></li>
+			</ul>
+			<!--svg 画上下两根虚线 -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="300%" height="100%">
+				<line class="top" x1="0" y1="0" x2="1900" y2="0"></line>
+				<line class="bottom" x1="0" y1="178" x2="1900" y2="178"></line>
+			</svg>
+		</div>
+		<!--倒影 -->
+		<div id="main_b">
+				<ul>
+				<li> <img src="img/pic1.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic2.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic3.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic4.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic5.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic1.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic2.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic3.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic4.jpg" width="150px" height="150px" alt=""/></li>
+				<li> <img src="img/pic5.jpg" width="150px" height="150px" alt=""/></li>
+			</ul>
+			<!--svg 画上下两根虚线 -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="300%" height="100%">
+				<line class="top" x1="0" y1="0" x2="1900" y2="0"></line>
+				<line class="bottom" x1="0" y1="178" x2="1900" y2="178"></line>
+			</svg>
+		</div>
+	 </div>
+	<!--总结
+	1.认识了body 为穿了一件衣服 -》 css样式  （参考桌面背景设置）
+	2.构建一个盒子box为图片框
+	2.1 第一个盒子为 动画的背景盒子
+	3.ul li 无序列表 并排展示-》 宽度 -》 父级
+	-->
+ </body>
+</html>

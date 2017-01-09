@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+		*{margin:0;padding:0;}
+		body{background:url("mic/public-bg9.jpg") ;}
+		.music{width:680px; height:450px;margin:120px auto;}
+		.music .cont{/*background:#33ccff;*/}
+		.music .cont .cont_left{float:left; width:248px; height:280px; background:#fff; padding:10px;}
+		.music .cont .cont_left img{ width:248px;}
+		.music .cont .cont_left audio{width:248px;}
+		.music .cont .cont_right{float:right; width:355px; padding:10px; color:#fff; line-height:24px;}
+		.music .botn{margin:20px 0px;}
+		.music .botn a{margin:0px 5px;}
+		.clear{clear:both;}/*专门为浮动存在的样式-》清除浮动*/
+  </style>
+ </head>
+ <body>
+		<div class="music">
+			<!--div 内容区域 音乐播放器和歌词 -->
+			<div class="cont">
+				<div class="cont_left">
+					<img src="mic/115663190.jpg" />
+					<!-- 音乐播放器-->
+					<audio autoplay  controls id="music">
+						 <source src="mic/ShootingStar.mp3" type="audio/mp3">
+					</audio>
+				</div>
+				<div class="cont_right">
+					<h2>Shooting Star</h2>
+					<h4>《The Midsummer Station》</h4>
+					<h3>Owl City</h3>
+					<p>Bruno Mars</p>
+					<p>Easy come Easy go</p>
+					<p>That's just how you live oh</p>
+					<p>Take take take it all</p>
+					<p>But you never give,</p>
+					<p>Should of known you were trouble</p>
+					<p>From the first kiss had your eyes wide open,</p>
+					<p>Why were they open? </p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="botn">
+				<a><img src="mic/1.png" onclick="bofang()"/></a>
+				<a><img src="mic/2.png" onclick="zanting()"/></a>
+				<a><img src="mic/4.png" onclick="kuaijin()"/></a>
+				<a><img src="mic/3.png" onclick="kuaitui()"/></a>
+				<a><img src="mic/5.png" onclick="jiasu()"/></a>
+				<a><img src="mic/6.png" onclick="mansu()"/></a>
+				<a><img src="mic/7.png" onclick="zhengchang()"/></a>
+				<a><img src="mic/10.png" onclick="jiayin()"/></a>
+				<a><img src="mic/9.png" onclick="jianyin()"/></a>
+				<a><img src="mic/8.png" onclick="jingyin()"/></a>
+			</div>
+			<script language="javascript">
+				var music =document.getElementById("music");//获取music的ID
+				//alert(music+'这个也介绍么。。。');
+				function bofang(){
+					//播放按钮
+					if (music.paused){
+						music.play();
+						}
+						else{
+
+						music.pause();
+
+						}
+				}
+				function zanting(){
+					//暂停按钮
+					music.pause();
+				}
+				function kuaijin(){
+					//快进按钮
+					music.currentTime+=10;
+				}
+				function kuaitui(){
+					//快退按钮
+					music.currentTime-=10;
+				}
+				function jiasu(){
+					//加速按钮
+					music.playbackRate=4;
+				}
+				function mansu(){
+					//慢速按钮
+					music.playbackRate=1/2;
+				}
+				function zhengchang(){
+					//正常速按钮
+					music.playbackRate=1;
+				}
+				function jiayin(){
+					//加音按钮
+					music.volume+=0.2;
+					music.muted=false;
+				}
+				function jianyin(){
+					//减音按钮
+					music.volume-=0.2;
+					music.muted=false;
+				}
+				function jingyin(){
+					if(!music.muted){
+						music.muted=true;
+					}else{
+						music.muted=false;
+					}
+					//静音按钮
+					
+				}
+			</script>
+		</div>
+ </body>
+</html>

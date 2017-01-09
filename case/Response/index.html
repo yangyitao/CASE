@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{margin:0; padding:0;}
+	body{background:url("img/bj.jpg") no-repeat fixed; background-size:cover;}
+	/*.head  nav a{background-color:rgba(255,255,255,1);}*/
+	.head  nav a:nth-child(1){background:rgba(255,255,255,1) url("img/1_28.png")no-repeat top; }
+	.head  nav a:nth-child(2){background:rgba(255,255,255,1) url("img/1_29.png")no-repeat top; }
+	.head  nav a:nth-child(3){background:rgba(255,255,255,1) url("img/1_30.png")no-repeat top; }
+	.head  nav a:nth-child(4){background:rgba(255,255,255,1) url("img/1_31.png")no-repeat top; }
+	.head  nav a:nth-child(5){background:rgba(255,255,255,1) url("img/1_32.png")no-repeat top; }
+	.head  nav a:nth-child(6){background:rgba(255,255,255,1) url("img/1_33.png")no-repeat top; }
+	.head  nav a:nth-child(7){background:rgba(255,255,255,1) url("img/1_34.png")no-repeat top; }
+	.head  nav a:nth-child(8){background:rgba(255,255,255,1) url("img/1_35.png")no-repeat top; }
+	.head  nav a:hover{background-position:bottom;}
+	@media screen and (min-width:880px){
+	.head{width:100%; height:70px; }
+	.head #logo{position:fixed; top:0px; left:50px;}
+	.head  nav{ width:870px;background:#fff;height:70px; margin:0 auto;}
+	.head  nav a{ width:100px; height:40px; margin:15px 0px; display:inline-block; }
+	}
+	@media screen and (max-width:880px){
+	.head{width:256px; height:256px;position:fixed;  bottom:20px; left:20px;}
+	.head #logo{position:absolute; top:0px; left:0px; right:0; bottom:0; padding:auto; margin:auto;}
+	.head  nav{width:256px; height:256px;background-color:rgba(0,0,0,0.6); border-radius:50%; transform:scale(0.1) rotate(-270deg); opacity:0; transition:all 500ms;}
+	.head  nav a{display:block; width:40px;height:40px;border-radius:50%; position:absolute;margin-left:-20px; margin-top:-20px; }
+	.head  nav:hover{transform:scale(1.1) rotate(0deg); opacity:1;}
+	}
+	.head #logo{width:80px; height:80px;  background:rgba(0,0,0,0.5) url("img/logo.png")no-repeat center; border:2px solid #fff; border-radius:40px;}
+	
+	
+  </style>
+ </head>
+ <body>
+		<div class="head">
+			<a id="logo" href="http://www.tanzhouedu.com"></a>
+			<nav>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+				<a href="http://www.tanzhouedu.com" class="menuico"></a>
+			</nav>
+		</div>
+		<script language="javascript">
+			var ico = document.querySelectorAll('.menuico');
+			//alert(ico.length);
+			for(var i=0, l=ico.length; i<l; i++){
+				ico[i].style.left=(50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4)+"%";
+				ico[i].style.top=(50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) +"%";
+			}
+		</script>
+ </body>
+</html>

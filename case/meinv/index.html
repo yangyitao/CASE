@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	*{margin:0px;padding:0px;}
+	#meinv{
+			width:850px;height:500px;border:4px solid #ddd;
+			margin:150px auto;
+			box-shadow:0px 0px 20px #000;
+			
+			}
+	.con{
+			width:750px;height:330px;overflow:hidden;
+			margin:15px auto;
+			}
+	#meinv ul li{	
+					list-style-type:none;
+					}
+	#meinv ul li .pic{
+						width:365px;height:330px;
+						margin-right:10px;position:relative;float:left;
+						}
+	.borLeft{
+			position:absolute;
+			border:3px solid red;
+			opacity:0;
+			}
+	.borRight{
+			position:absolute;
+			border:3px solid red;
+			opacity:0;
+			}
+	h1{text-align:center;margin-top:10px;color:#0000ff;}
+	a{display:block;width:150px;height:55px;background:#33ff33;color:#fff;text-align:center;line-height:55px;text-decoration:none;border-radius:10px;margin:30px auto;}
+	a:hover{background:#33cc33;}
+	img{opacity:0.5;}
+  </style>
+ </head>
+ <body>
+  <div id="meinv">
+  <h1>美女来找茬</h1>
+  <div class="con">
+	<ul>
+		<li>
+			<div class="pic">
+				<img src="images/1.jpg" />
+				<div class="borLeft" style="left:28px;top:45px;width:177px;height:57px;">
+				</div>
+			</div>
+			<div class="pic">
+				<img src="images/11.jpg" />
+				<div class="borRight" style="left:28px;top:45px;width:177px;height:57px;"></div>
+			</div>
+		</li>
+		<li>
+			<div class="pic">
+				<img src="images/2.jpg" />
+				<div class="borLeft" style="left:0px;top:0px;width:65px;height:60px;"></div>
+			</div>
+			<div class="pic">
+				<img src="images/22.jpg" />
+				<div class="borRight" style="left:0px;top:0px;width:65px;height:60px;"></div>
+			</div>
+		</li>
+		<li>
+			<div class="pic">
+				<img src="images/3.jpg" />
+				<div class="borLeft" style="left:0px;bottom:0px;width:25px;height:70px;"></div>
+			</div>
+			<div class="pic">
+				<img src="images/33.jpg" />
+				<div class="borRight" style="left:0px;bottom:0px;width:25px;height:70px;"></div>
+			</div>
+		</li>
+	</ul>
+	</div>
+	<a href="#">开始游戏</a>
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" >
+		var flase=0;
+		var cont=0;
+		$("a").click(function(){
+			$("img").css("opacity","1");
+			flase=1;
+			$(this).css("display","none");
+		})
+		$(".borLeft").click(function(){
+			if(flase==1)
+			{
+			$(".borLeft").css("opacity","1");
+			$(".borRight").css("opacity","1");
+			cont++;
+			if(cont<3)
+			alert("恭喜过关，挑战下一关？");
+			else
+			alert("恭喜，你已通关！");
+			$(".borLeft").css("opacity","0");
+			$(".borRight").css("opacity","0");
+			$(".con ul li").eq(cont).show().siblings().hide();
+			}
+			});
+			
+			
+			$(".borRight").click(function(){
+			if(flase==1)
+			{
+			$(".borLeft").css("opacity","1");
+			$(".borRight").css("opacity","1");
+			cont++;
+			if(cont<3)
+			alert("恭喜过关，挑战下一关？");
+			else
+			alert("恭喜，你已通关！");
+			$(".borLeft").css("opacity","0");
+			$(".borRight").css("opacity","0");
+			$(".con ul li").eq(cont).show().siblings().hide();
+			}
+			});
+			
+
+  </script>
+ </body>
+</html>

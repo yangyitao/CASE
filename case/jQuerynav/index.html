@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码集charset=gbk，bg2312中文编码，utf-8国际编码-->
+  <meta charset="UTF-8">
+  <!--当前页面的三要素-->
+  <title>jQuery</title>
+  <meta name="Keywords" content="关键词，关键词">
+  <meta name="Description" content="描述">
+  <!--css，js-->
+  <style type="text/css">
+*{margin:0;padding:0;}
+body{font-size:12px;font-family:"微软雅黑"}
+ul{list-style:none}
+.nav{width:210px;background:#252525;color:#fff}
+/*logo*/
+.logo{height:52px;padding:8px 0;text-align:center;}
+
+/*导航内容-开始*/
+.title{display:block;padding-left:30px;font-size:14px;}
+.title img{vertical-align:middle;margin-right:8px;}
+.nav ul li{line-height:45px;border-bottom:1px solid #000;border-top:1px solid #424242;cursor:pointer}
+.nav ul li.selete{background:#5580fb}
+/*导航内容-结束*/
+
+/*二级导航-开始*/
+.hover{background:#2f3437;line-height:35px; display:none}
+.hover p{border-top:1px solid #3f4041;padding-left:45px;}
+/*二级导航-结束*/
+
+ </style>
+ </head>
+ <body>
+  <div class="nav">
+    <!--logo-->
+	<div class="logo"><img src="images/logo.png"/></div>
+	 <ul>
+		 <li class="selete">
+		  <span class="title"><img src="images/img1.png"/>IT培训</span>
+		  <!--鼠标点击显示内容-开始-->
+		 <div class="hover" style="display:block;">
+		   <p>网页制作</p>
+		   <p>java</p>
+		   <p>室内设计</p>
+		   <p>模具设计</p>
+		 </div>
+		 <!--鼠标点击显示内容-结束-->
+		 </li>
+		 
+		 <li>
+		  <span class="title"><img src="images/img2.png"/>技能学习</span>
+		  <!--鼠标点击显示内容-开始-->
+		 <div class="hover">
+		   <p>SEO</p>
+		   <p>网络营销</p>
+		   <p>平面设计</p>
+		   <p>淘宝美工</p>
+		   <p>office办公</p>
+		 </div>
+		 <!--鼠标点击显示内容-结束-->
+		 </li>
+		
+		<li>
+		  <span class="title"><img src="images/img3.png"/>语言学习</span>
+		  <!--鼠标点击显示内容-开始-->
+		 <div class="hover">
+		   <p>美式口语</p>
+		   <p>韩语</p>
+		   <p>日语</p>
+		   <p>葡萄牙语</p>
+		   <p>西班牙语</p>
+		   <p>泰语</p>
+		 </div>
+		 <!--鼠标点击显示内容-结束-->
+		 </li>
+
+		 <li>
+		  <span class="title"><img src="images/img4.png"/>兴趣爱好</span>
+		  <!--鼠标点击显示内容-开始-->
+		 <div class="hover">
+		   <p>人际关系</p>
+		   <p>电脑维护</p>
+		   <p>亲子课堂</p>
+		   <p>游戏课程</p>
+		   <p>DIY</p>
+		   <p>畜牧业</p>
+		 </div>
+		 <!--鼠标点击显示内容-结束-->
+		 </li>
+	 </ul>
+
+	</div>
+<!--jQuery 引用-->
+<script src="js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+ $(".nav ul li").click(function(){
+	$(this).find(".hover").slideToggle("show");//slideToggle() 方法通过使用滑动效果（高度变化）来切换元素的可见状态
+	//鼠标点击显示背景颜色，
+	 if($(this).hasClass("selete")){//如果有selete 属性,hasClass方法检查被选元素是否包含指定的class
+		$(this).removeClass("selete");//移除selete
+	}
+	else{
+	 $(this).addClass("selete");//添加selete
+	}
+	//只允许出现一个 hover 内容
+	$(this).siblings("li").removeClass("selete").find(".hover").slideUp("show");
+ //alert("打印");
+ });
+$(".hover").click(function(e){
+	e.stopPropagation();//阻止事件,点击hover不收缩内容
+	});
+// find() 方法获得当前元素集合中每个元素的后代
+// siblings() 得到所有li里面匹配元素
+// slideUp() 通过使用滑动效果，隐藏被选元素，如果元素已显示出来的话
+</script>
+ </body>
+</html>

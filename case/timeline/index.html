@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>JavaWeb开发QQ空间时光轴 - Arry老师</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		
+		<!--css , js-->
+		<!--css: 层叠样式表，一件美丽的外衣-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{background:url("images/body_bg.jpg");font-size:12px;font-family:"微软雅黑";color:#666;}
+			/*以“.”开头的css样式称之为 类样式*/
+			
+			/*timeline strat*/
+			.timeline{width:1100px;height:600px;margin:0 auto;position:relative;}
+			.timeline .line{width:5px;height:1000px;background:#ccc;position:absolute;left:200px;top:30px;opacity:0.3;}
+			.timeline .l_all{width:1100px;height:600px;position:absolute;}
+			.timeline .l_all .list{width:800px;margin: 50px 0 0 168px;}
+			.timeline .l_all .list .icon{width:66px;height:66px;float:left;}
+			.timeline .l_all .list .icon img{width:66px;height:66px;border-radius:33px;}
+			.timeline .l_all .list .sj{width:13px;height:16px;background:url("images/left.png") no-repeat; float:left; margin:23px 0 0 10px;}
+			.timeline .l_all .list .mes{width:450px;background:#FFF;float:left;border-radius:8px;
+				color:#888;font-size:14px;padding:10px 20px;}
+			/*end timeline*/
+
+			/*清除浮动*/
+			.clear{clear:both;}
+		</style>
+	<!--导入自定义的动画效果的css样式-->
+	<link type="text/css" rel="stylesheet" href="css/animate.css"></link>
+	</head>
+<body>
+
+	<!--div: 层，盒子，容器-->
+	<!--以class="自定义名称" 称之为为 类样式-->
+	<div class="timeline">
+		<div class="line"></div>
+		<div class="l_all">
+
+			<!--list start-->
+			<div class="list animated rollIn">
+				<div class="icon">
+					<img src="images/arry.jpg" alt="Arry老师" width="66" height="66"/>
+				</div>
+				<div class="sj"></div>
+				<div class="mes">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投  要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--end list-->
+
+			<!--list start-->
+			<div class="list animated rollIn">
+				<div class="icon">
+					<img src="images/facebook.jpg" alt="facebook" width="66" height="66"/>
+				</div>
+				<div class="sj"></div>
+				<div class="mes">
+					【扎克伯格获得成就的6大要素】 <br />野心：功成名就人士的基石是野心或是对个人成就的渴望 ; <br /> 远见：个人魅力取决于个人的远见 ，它让你说服其他人认同你的远见； <br /> 执行力：保持专注,不断实现； <br /> 决心： 驱动力 , 韧性或毅力是其展现的最大变量； <br /> 运气：创造你自己的运气； <br /> 时机：一路“管理着时钟”
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--end list-->
+			<!--list start-->
+			<div class="list animated rollIn">
+				<div class="icon">
+					<img src="images/mv.jpg" alt="Arry老师" width="66" height="66"/>
+				</div>
+				<div class="sj"></div>
+				<div class="mes">
+					若要有优美的嘴唇，要讲亲切的话，若要有可爱的眼睛，要看到别人的长处，若要有苗条的身材，把你的食物分给饥饿的人，若要有美丽的头发，让孩子一天抚摸一次，若要有优雅的姿态，走路请记住行人不止你一个。 <br />━━━ 奥黛丽赫本
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--end list-->
+			
+		</div>
+	</div>
+
+<!--导入jQuery的官方类库-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	
+	var scrollHeight = 0; // 浏览器滚动条的高度
+	var scrollTop = 0; // 滚动条距离顶部的高度
+	var html = "";
+	$(function(){
+		//alert("亲爱的同学们，我爱你们，大家学习JavaWeb 一定要学好前端这些知识，因为95%以上的Java开发者都不懂，所有我们要学，所有说跟我学习的同学薪水就高。");
+		var _height = $(window).height(); // 获取浏览器窗口的高度
+		$(window).scroll(function(){
+			scrollHeight = document.body.scrollHeight; // 获取浏览器滚动条的高度
+			scrollTop = document.body.scrollTop; // 获取浏览器滚动条距离顶部的高度
+			if(scrollTop+_height >= scrollHeight){
+				html = $(".l_all").html();
+				$(".l_all").append(html);
+				$(".line").height(document.body.scrollHeight);
+			}
+		});
+	});
+
+</script>
+</body>
+</html>

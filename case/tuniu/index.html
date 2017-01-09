@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>途牛首页景点</title>
+  <style type="text/css">
+		*{margin:0px;padding:0px;}
+		#web{
+			width:735px;height:350px;
+			margin:50px auto;position:relative;
+			}
+		body{background:url("images/bg.jpg");}
+		.con{width:735px;height:350px;background:#fff;overflow:hidden;}
+		.con ul li{
+			list-style-type:none;
+			width:735px;height:350px;
+			}
+		.prev{
+			width:45px;height:100px;
+			position:absolute;left:0px;top:50%;margin-top:-50px;
+			background:url("images/button.png");
+			opacity:0.5;display:none;
+			}
+		.next{
+			width:45px;height:100px;
+			position:absolute;right:0px;top:50%;margin-top:-50px;
+			background:url("images/button.png");
+			opacity:0.5;background-position:-55px 0px;display:none;
+		}
+		.nav{
+			width:720px;height:30px;
+			position:absolute;left:50%;margin-left:-360px;bottom:10px;
+			}
+		.nav ul li{
+			list-style-type:none;/*去掉li的黑点*/
+			width:119px;height:30px;
+			float:left;/**浮动*/background:rgba(255,255,255,0.6);/*设置背景透明*/
+			margin-right:1px;text-align:center;line-height:30px;font-size:12px;
+			color:#333;
+			}
+		.nav ul .bg{background:rgba(0,0,0,0.6);color:#fff;}
+  </style>
+ </head>
+ <body>
+	<div id="web">
+		<div class="con">
+			<ul>
+				<li><img src="images/1.jpg" /></li>
+				<li><img src="images/2.jpg" /></li>
+				<li><img src="images/3.jpg" /></li>
+				<li><img src="images/4.jpg" /></li>
+				<li><img src="images/5.jpg" /></li>
+				<li><img src="images/6.jpg" /></li>
+			</ul>
+		</div>
+		<div class="prev"></div>
+		<div class="next"></div>
+		<div class="nav">
+			<ul>
+				<li class="bg">春天赏花去</li>
+				<li>疯狂特卖</li>
+				<li>海岛错峰游</li>
+				<li>三亚超值爆款</li>
+				<li>春游要出境</li>
+				<li>日韩赏樱</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var i=0; //i用来存放li的下标
+		$("#web").hover(function(){
+			$(".prev").fadeIn(300); /*fadeIn()淡入显示*/
+			$(".next").fadeIn(300);
+		},function(){
+			$(".prev").fadeOut(300);/*fadeOut()淡出隐藏*/
+			$(".next").fadeOut(300);
+		})
+		$(".nav ul li").hover(function(){
+			i=$(this).index();
+			$(".con ul li").eq(i).fadeIn(100).siblings().fadeOut(100);
+			$(this).addClass("bg").siblings().removeClass("bg");
+		})
+		$(".prev").click(function(){
+			i--; //i=i-1;
+			if(i<0)
+			i=5;
+			$(".con ul li").eq(i).fadeIn(100).siblings().fadeOut(100);
+			$(".nav ul li").eq(i).addClass("bg").siblings().removeClass("bg");
+		})
+		$(".next").click(function(){
+			i++; //i=i+1;
+			if(i>5)
+			i=0;
+			$(".con ul li").eq(i).fadeIn(100).siblings().fadeOut(100);
+			$(".nav ul li").eq(i).addClass("bg").siblings().removeClass("bg");
+		})
+	</script>
+	<!--所有的标签名都可以直接拿到css里面控制样式-->
+	<!--如果是id命名用#加盒子名 如果是class命名用.加盒子名-->
+ </body>
+</html>

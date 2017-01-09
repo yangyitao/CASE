@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>vip课</title>
+		<style type="text/css">
+			*{margin:0;padding:0;font-family:"Microsoft yahei";}
+			html{height:100%;}
+			body{height:100%;}
+			#content{height:100%;position:relative;z-index:-3;}
+			.size{width:100%;height:100%;}
+			.size p{width:600px;color:rgba(255,255,255,.8);font-size:36px;text-align:center;
+				position:relative;top:48%;margin:0 auto;}
+			h3{position:relative;top:48%;margin:0 auto;}
+			.div1{background:url("img/1.jpg") center fixed;}
+			.div2{background:url("img/2.jpg") center fixed;}
+			.div3{background:url("img/3.jpg") center fixed;}
+			.div4{background:url("img/4.jpg") center fixed;}
+
+			#nav{position:fixed;top:27px;width:100%;}
+			#nav h1{width:226px;height:47px;float:left;margin-left:60px;}
+			#nav ul{width:405px;height:30px;float:right;margin-right:60px;
+				position:relative;padding:5px 0;}
+			#nav ul li.txt{list-style-type:none;float:left;margin-left:50px;line-height:30px;}
+			#nav ul li.txt a{color:rgba(255,255,255,.8);font-size:14px;
+				text-decoration:none;text-shadow:0 4px 5px #000;}
+			#nav ul li.bor{list-style-type:none;border:1px solid rgba(255,255,255,.5);
+				height:30px;width:56px;top:5px;left:36px;position:absolute;
+				border-radius:15px;z-index:-1;}
+			#nav ul li.hov a{color:rgba(255,255,255,1);}
+
+			#l-nav{width:100px;height:324px;background:url("img/nav.png") no-repeat;
+				position:fixed;top:30%;left:60px;}
+			#l-nav ul{list-style-type:none;color:rgba(255,255,255,.9);
+				font-size:12px;margin-top:7px;}
+			#l-nav ul li{margin-bottom:56px;padding-left:45px;line-height:21px;}
+			#l-nav ul li.cho{background:url("img/nav_cho.png") no-repeat 0 -1px;}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+
+		<div id="content">
+			<div class="div1 size">
+				
+			</div>
+			<div class="div2 size">
+			</div>
+			<div class="div3 size">
+			</div>
+			<div class="div4 size">
+			</div>
+		</div>
+
+		<!--顶部导航-->
+		<div id="nav">
+			<h1><img src="img/logo.png" /></h1>
+			<ul>
+				<li class="txt hov"><a href="">首页</a></li>
+				<li class="txt"><a href="">常见问题</a></li>
+				<li class="txt"><a href="">论坛</a></li>
+				<li class="txt"><a href="">360首页&gt;&gt;</a></li>
+				<li class="bor"></li>
+			</ul>
+		</div>
+		<!--顶部导航 结束-->
+		
+		<!--左侧导航-->
+		<div id="l-nav">
+			<ul>
+				<li class="cho">安全换机</li>
+				<li>无网对传</li>
+				<li>隐私粉碎</li>
+				<li>一键转移</li>
+			</ul>
+		</div>
+		<!--左侧导航 结束-->
+
+
+
+<script type="text/javascript">
+var hei;
+var a = 0;
+	window.onload = function(){
+		$("#nav .txt").mouseover(function(){
+			$(this).addClass("hov").siblings().removeClass("hov");
+			var tWid = $(this).width();
+			var bWid = tWid + 28;
+			var fWid = $(this).position().left + 36;
+			$(".bor").stop(true).animate({width:bWid+"px",left:fWid+"px"},500);
+		});
+
+		$("#nav ul").mouseleave(function(){
+			$(".bor").stop(true).animate({width:"56px",left:"36px"},200);
+			$(this).find("li").eq(0).addClass("hov").siblings().removeClass("hov");
+		});
+
+		$(window).scroll(function(){
+			var n = parseInt($(window).scrollTop() / $(window).height());
+			$("#l-nav ul li").eq(n).addClass("cho").siblings().removeClass("cho");
+		});
+	}
+</script>
+	</body>
+</html>

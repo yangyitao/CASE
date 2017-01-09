@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>vip课</title>
+		<style>
+			*{margin:0;padding:0;font-family:"Microsoft yahei";}
+			.bg{width:100%;height:954px;background:url("img/bg.jpg") center;}
+			.show{width:1090px;height:430px;padding-top:170px;margin:0 auto;}
+			.pic1,.pic2,.pic3,.pic4{width:100px;height:429px;float:left;}
+			.pic1{background:url("img/1.jpg");}
+			.pic2{background:url("img/2.jpg");}
+			.pic3{background:url("img/3.jpg");}
+			.pic4{background:url("img/4.jpg");width:789px;}
+			.txt{width:76px;height:405px;background:rgba(0,0,0,.5);color:#fff;line-height:13px;
+				padding:24px 0 0 24px;}
+			.p1{width:12px;font-size:12px;float:left;}
+			.p2{width:16px;font-size:14px;font-weight:700;float:left;margin-left:15px;}
+		</style>
+	</head>
+	<body>
+		<div class="bg">
+			<div class="show">
+				<div class="pic1 pic">
+					<div class="txt">
+						<p class="p1">作者<br>：默默的墨墨</p>
+						<p class="p2">我的个人拉萨之旅丨丨故事之城</p>
+					</div>
+				</div>
+				<div class="pic2 pic">
+					<div class="txt">
+						<p class="p1">作者<br>：美丽的天空</p>
+						<p class="p2">拥抱绝美的戈壁，倾听响沙的乐奏</p>
+					</div>
+				</div>
+				<div class="pic3 pic">
+					<div class="txt">
+						<p class="p1">作者<br>：蓝染惣右介</p>
+						<p class="p2">这美丽的香格里拉</p>
+					</div>
+				</div>
+				<div class="pic4 pic">
+					<div class="txt">
+						<p class="p1">作者<br>：美丽的天空</p>
+						<p class="p2">征服个人项目 丨丨 南极</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script>
+			$(".pic").hover(function(){
+				$(this).stop(true).animate({width:"789px"},500).siblings().stop(true).animate({width:"100px"},500);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>360弹幕技术 - Arry老师</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{background:url("images/360.png") no-repeat top center;font-size:12px;font-family:"微软雅黑"; color:#666;}
+			
+			/*dm start*/
+			.dm .screen{width:100%;height:100%;position:absolute;top:0;left:0;}
+			.dm .screen .mask{width:100%;height:100%;background:#000;position:absolute;top:0;left:0;
+				opacity:0.8;filter:alpha(opacity=80);
+				z-index:1;}
+			.dm .screen .s_close{width:38px;height:38px;display:block;background:#600;text-align:center;line-height:38px;font-size:20px;color:#fff;text-decoration:none;border-radius:19px;
+				position:absolute;top:20px;right:20px;border:1px solid #fff;
+				/*
+					使用z-index 设置元素的级别（层叠数越大，级别越高）
+					如果几个元素需要设置显示的级别，必须配合position:absolute;使用
+					（注：如果没有绝对定位 z-index是不起作用的）
+				*/z-index:2;
+			}
+			.dm .s_close:hover{background:red;}
+			.dm .send{width:100%;height:76px;position:absolute;bottom:0;left:0;}
+			.dm .send .s_fiter{width:100%;height:76px;background:#000;position:absolute;bottom:0;left:0;
+				opacity:0.8;filter:alpha(opacity=80);z-index:1}
+			.dm{width:100%;height:100%;position:absolute;top:0;left:0;}
+			.dm .send .s_con{width:100%;height:76px;position:absolute;bottom:0;left:0;z-index:2;
+				text-align:center;line-height:76px;}
+			.dm .send .s_con .s_txt{width:605px;height:36px;border:0;border-radius: 3px 0 0 3px;font-size:16px;font-family:"微软雅黑"; color:#666;line-height:36px;}
+			.dm .send .s_con .s_sub{width:100px;height:37px;background:#65c33d;border:1px solid #5bba32;font-size:14px;font-family:"微软雅黑"; color:#fff;border-radius: 0 3px 3px 0;cursor: pointer;}
+			.dm .send .s_con .s_sub:hover{background:#3eaf0e;border-color: #329209;}
+			.dm .screen .s_show{position:relative;z-index:3;}
+			.dm .screen .s_show div{position:absolute;top:76;left:0;line-height:36px;font-size:22px;font-weight:500;}
+			/*end dm*/
+
+		</style>
+
+	<!--引入潭州官方css动画类库-->
+	<link type="text/css" rel="stylesheet" href="css/tz.css"></link>
+
+	</head>
+<body>
+	
+	<a href="#" class="btn">弹幕技术</a>
+	<!--dm start-->
+	<div class="dm">
+
+		<!--screen start-->
+		<div class="screen">
+			<a href="#" class="s_close">X</a>
+			<div class="mask"></div>
+			<div class="s_show">
+				<div>Star老师太帅了！</div>
+				<div>Star老师是我们所有的潭州人的男神 ！</div>
+				<div>现在Star老师课程改革了，新增了眼保健操 ！</div>
+				<div>黄志玲同学，其实也挺帅的！</div>
+				<div>其实啊，我们所有的潭州人都是最帅的</div>
+				<div>所有的女孩子 都是最漂亮的 ！</div>
+			</div>
+		</div>
+		<!--end screen-->
+
+		<!--send start-->
+		<div class="send">
+			<div class="s_fiter"></div>
+			<div class="s_con">
+				<input type="text" class="s_txt" /><input type="button" id="send_sub" value="发表评论" class="s_sub" />
+			</div>
+		</div>
+		<!--end send-->
+
+	</div>
+	<!--end dm-->
+	
+
+<!--引入jquery的官方类库-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		// 调用初始化弹幕函数
+		init_screen();
+
+		// 点击展开和关闭
+		$(".btn,.s_close").click(function(){
+			$(".dm,.s_close").toggle("slow");
+		});
+
+		// 发送信息
+		$("#send_sub").click(function(){
+			var text = $(".s_txt").val();
+			var _label = $("<div class='magictime twisterInUp'>"+text+"</div>");
+			$(".s_show").append(_label);
+			init_screen();
+		});
+		
+		// 初始化弹幕
+		function init_screen(){
+			var _top = 0;
+			$(".s_show").find("div").show().each(function(){
+				var _left = $(window).width() - $(this).width(); // 浏览器的最大宽度，div的left值
+				var _height = $(window).height(); // 浏览器的最大高度
+				
+				_top = _top + 76;
+				if(_top >= _height - 100){
+					_top = 0;
+				}
+				
+				// 设定文字的初始化位置
+				$(this).css({left:_left,top:_top,color:getRandomColor()});
+				
+				// 根据取余 设定不一样的时间
+				var time = 10000;
+				if($(this).index() % 2 == 0){
+					time = 20000;
+				}
+				// 动起来
+				$(this).animate({left:"-"+_left+"px"},time,function(){
+					$(this).remove();
+				});
+
+			});
+		}
+
+	});
+
+	// 随机获取颜色值
+	function getRandomColor(){
+		return '#' + (function(h) {
+			return new Array(7 - h.length).join("0") + h
+		})((Math.random() * 0x1000000 << 0).toString(16))	
+	}
+
+</script>
+
+</body>
+</html>

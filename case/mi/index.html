@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>备课</title>
+		<style type="text/css">
+			*{margin:0;padding:0;font-family:"Microsoft yahei";}
+			body{background:#F4F4F4;}
+			#nav{width:930px;height:49px;margin:0 auto;margin-top:100px;}
+			#all{width:248px;height:49px;float:left;}
+			#all a{display:block;width:248px;height:49px;background:#FF4A00;
+				color:#fff;text-decoration:none;font-size:18px;line-height:50px;
+				text-indent:20px;}
+			#main{width:682px;height:49px;float:left;background:#404144;
+				position:relative;}
+			#main ul li{list-style:none;float:left;}
+			#main ul li a{display:block;color:#fff;
+				text-decoration:none;padding:14px 11px;}
+			#main ul li a:hover{background:#333;}
+			#main .hid{width:682px;height:0px;background:#fff;
+				position:absolute;left:0;overflow:hidden;}
+			#main .hid ul li{float:left;width:340px;height:200px;border-right:1px solid 
+			#ccc;}
+			#main .hid .left{width:160px;height:160px;float:left;margin-top:30px;}
+			#main .hid .right .p1{font-size:20px;margin-top:40px;}
+			#main .hid .right .p2{font-size:14px;color:#6D6D6D;}
+			#main .hid .right .p3{color:#FF4A00;margin-top:20px;}
+			#main .hov span{display:block;border-width:5px;position:absolute;
+				bottom:0;border-style:solid;display:none;
+				border-color:transparent transparent #fff;}
+			
+			#content{width:930px;height:593px;margin:0 auto;}
+
+			
+		
+			#slider{width:682px;height:420px;background:#ffc;
+				position:relative;overflow:hidden;}
+			#pic{width:682px;height:420px;position:relative;}
+			#pic img{position:absolute;top:0;left:0;display:none;}
+			#but{width:160px;height:20px;position:absolute;right:10px;bottom:15px;
+				z-index:1;}
+			#but ul li{list-style-type:none;float:left;width:28px;height:18px;
+				border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.3);
+				color:#fff;font-size:12px;text-align:center;line-height:18px;
+				margin:0 5px;cursor:pointer;}
+			#but ul li:hover,#but ul .cli{background:rgba(0,0,0,.8);}
+			#left,#right{width:40px;height:420px;position:absolute;top:0;
+				cursor:pointer;display:none;}
+			#slider:hover #left,#slider:hover #right{display:block;}
+			#left{left:0;background:url("img/arrow.png") no-repeat -88px center;}
+			#right{right:0;background:url("img/arrow.png") no-repeat -121px center;}
+			#left:hover{background-position:0 center;}
+			#right:hover{background-position:-43px center;}
+		</style>
+		<script src="js/jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+		<div id="nav">
+			<div id="all">
+				<a href="">全部商品分类</a>
+			</div>
+			<div id="main">
+				<ul>
+					<li><a href="">首页</a></li>
+					<li class="hov">
+						<a href="">小米手机</a>
+						<span style="left:92px;"></span>
+						<div class="hid">
+							<ul>
+								<li>
+									<div class="left">
+										<img src="img/xm1.jpg">
+									</div>
+									<div class="right">
+										<p class="p1">小米手机4</p>
+										<p class="p2">工艺和手感，超乎想象</p>
+										<p class="p3"><b>1999</b>元起</p>
+									</div>
+								</li>
+								<li>
+									<div class="left">
+										<img src="img/xm2.jpg">
+									</div>
+									<div class="right">
+										<p class="p1">小米手机4</p>
+										<p class="p2">工艺和手感，超乎想象</p>
+										<p class="p3"><b>1999</b>元起</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="hov">
+						
+						<a href="">红米</a>
+						<span style="left:167px;"></span>
+						<div class="hid">
+							<ul>
+								<li>
+									<div class="left">
+										<img src="img/hm1.jpg">
+									</div>
+									<div class="right">
+										<p class="p1">小米手机4</p>
+										<p class="p2">工艺和手感，超乎想象</p>
+										<p class="p3"><b>1999</b>元起</p>
+									</div>
+								</li>
+								<li>
+									<div class="left">
+										<img src="img/hm2.jpg">
+									</div>
+									<div class="right">
+										<p class="p1">小米手机4</p>
+										<p class="p2">工艺和手感，超乎想象</p>
+										<p class="p3"><b>1999</b>元起</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+					</li>
+					<li><a href="">小米平板</a></li>
+					<li><a href="">小米电视</a></li>
+					<li><a href="">盒子</a></li>
+					<li><a href="">路由器</a></li>
+					<li><a href="">合约机</a></li>
+					<li><a href="">服务</a></li>
+					<li><a href="">社区</a></li>
+				</ul>
+			</div>
+		</div>
+	<div id="content">
+		<div id="c-left" style="width:248px;float:left;"><img src="img/left.png"></div>
+		<div id="slider" style="float:left;">
+			<div id="pic">
+				<img src="img/1.jpg" style="display:block;" />
+				<img src="img/2.jpg" />
+				<img src="img/3.jpg" />
+				<img src="img/4.jpg" />
+			</div>
+			<div id="but">
+				<ul>
+					<li class="cli">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+			<div id="left"></div>
+			<div id="right"></div>
+		</div>
+	</div>
+		<script>
+			$(".hov").hover(function(){
+				$(this).children(".hid").css("z-index","2");
+				$(this).children("span").show();
+				$(this).children(".hid").animate({height:"200px"},200);
+			},function(){
+				$(this).children(".hid").css("z-index","1");
+				$(this).children("span").hide();
+				$(this).children(".hid").stop(true).delay(200).animate({height:"0px"},200);
+			});
+
+			var a = 0;
+			var b = 0;
+			var Play = null;
+			$("#but li").click(function(){
+				$(this).addClass("cli").siblings().removeClass("cli");
+				a = $(this).index();
+				if(a > b){
+					$("#pic img").eq(a).css("left","682px").show();
+					$("#pic img").eq(a).stop(true).animate({left:"0px"},300);
+					$("#pic img").eq(b).stop(true).animate({left:"-682px"},300,function(){
+						$(this).hide().css("left","0");
+					});
+				}else if(a < b){
+					$("#pic img").eq(a).css("left","-682px").show();
+					$("#pic img").eq(a).stop(true).animate({left:"0px"},300);
+					$("#pic img").eq(b).stop(true).animate({left:"682px"},300,function(){
+						$(this).hide().css("left","0");
+					});
+				}
+				b = a;
+			});
+
+			$("#right").click(function(){
+				a++;
+				if(a < 4){
+					$("#but li").eq(a).addClass("cli").siblings().removeClass("cli");
+					$("#pic img").eq(a).stop(true).fadeIn().siblings().stop(true).fadeOut();
+					if(a == 3){a = -1;b = 0;};
+					b = a;
+				}else{
+					a = 0;
+					$("#but li").eq(a).addClass("cli").siblings().removeClass("cli");
+					$("#pic img").eq(a).stop(true).fadeIn().siblings().stop(true).fadeOut();
+					b = a;
+				};
+				
+			});
+
+			$("#left").click(function(){
+				a--;
+				if(a > -1){
+					$("#but li").eq(a).addClass("cli").siblings().removeClass("cli");
+					$("#pic img").eq(a).stop(true).fadeIn().siblings().stop(true).fadeOut();
+					if(a == 0){a = 4;b = 3;};
+				}else{
+					a = 3;
+					$("#but li").eq(a).addClass("cli").siblings().removeClass("cli");
+					$("#pic img").eq(a).stop(true).fadeIn().siblings().stop(true).fadeOut();
+					b = a;
+				};
+			});
+
+			$("#slider").hover(function(){
+				clearInterval(Play);
+			},function(){
+					auto();
+			});
+
+			function auto(){
+				Play = setInterval(function(){
+					a++;
+					if(a < 4){
+						$("#but li").eq(a).addClass("cli").siblings().removeClass("cli");
+						$("#pic img").eq(a).stop(true).fadeIn().siblings().stop(true).fadeOut();
+						if(a == 3){a = -1};
+						b = a;
+					}else{
+						a = -1;
+						b = 0;
+					};
+				},2000);
+				
+			};
+			auto();
+		</script>
+	</body>
+</html>

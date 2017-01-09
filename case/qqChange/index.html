@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title> Java开发大数据筛选系统【腾讯内部顶尖技术】- Arry老师</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{background:#663333;font-size:12px;font-family:"微软雅黑";color:#666;}
+			/*btn start*/
+			#btn{width:150px;height:34px;display:block;border:1px solid #039ae3;text-align:center;line-height:34px;text-decoration:none;font-size:14px;color:#039ae3;margin:50px auto;border-radius:20px;}
+			#btn:hover{background:#039ae3;color:#fff;}
+			/*end btn*/
+
+			/*qq start*/
+			.qq{width:576px;height:530px;background:#fff;border:1px solid #F0F0F0;border-radius:3px;margin:0 auto;display:none;}
+			.qq .q_title{width:576px;height:30px;background:#039ae3;}
+			.qq .q_title h3{font-size:14px;color:#fff;line-height:30px;padding-left:10px;float:left;}
+			.qq .q_title .q_close{float:right;line-height:30px;padding-right:10px;font-size:16px;text-decoration:none;color:#fff;}
+			.qq .content{width:536px;height:371px;padding:20px;}
+			.qq .content .c_list{width:210px;height:371px;float:left;}	
+			.qq .content .c_list h4{font-size:14px;margin-bottom:10px;}
+			.qq .content .c_list ul {width:210px;height:362px;border:1px solid #e5e5e5;background:#fafafa;}
+			.qq .content .c_list ul li{list-style:none;line-height:36px;padding-left:8px;font-size:14px;}
+			.qq .content .c_list ul li:hover{background:#039ae3;color:#fff;}
+			.qq .content .c_con{width:100px;height:270px;float:left;
+				padding-top:120px;}
+			.qq .content .c_con a{width:80px;height:36px;display:block;border:1px solid red;
+				margin:20px auto;border:1px solid #d9d9d9;text-align:center;line-height:36px;
+				text-decoration:none;color:#333;background:#f3f3f3;}
+			.qq .content .c_con span{width:80px;display:block;margin:0 auto;font-size:14px;}
+			.qq .sub{float:right;}
+			.qq .sub a{width:100px;height:40px;display:block;background:#039ae3;text-align:center;
+				line-height:40px;text-decoration:none;font-size:14px;font-weight:bold;color:#fff;
+				margin: 29px 36px 0 0;border-radius:3px;}
+			/*end qq*/
+			.sel{background:#039ae3;color:#fff;}
+
+		</style>
+
+
+	<link rel="stylesheet" type="text/css" href="css/tz.css"></link>
+
+	</head>
+<body>
+
+	<!--btn start-->
+	<a href="#" id="btn">大数据筛选插件</a>
+	<!--end btn-->	
+
+	<!--qq start-->
+	<div class="qq">
+		<div class="q_title">
+			<h3>选择老师</h3>
+			<a href="#" class="q_close" title="关闭">X</a>
+		</div>
+		<!--content start-->
+		<div class="content">
+			<div class="c_list">
+				<h4>选择老师：</h4>
+				<ul id="c_ul_left">
+					<li>Arry老师QQ：910984013</li>
+					<li>Clion老师QQ：910984013</li>
+					<li>小伟老师QQ：910984013</li>
+					<li>jack老师QQ：9080980</li>
+					<li>Arry老师QQ：910984013</li>
+					<li>Clion老师QQ：910984013</li>
+					<li>小伟老师QQ：910984013</li>
+					<li>jack老师QQ：9080980</li>
+					<li>jack老师QQ：9080980</li>
+					<li>jack老师QQ：9080980</li>
+				</ul>
+			</div>
+			<div class="c_con">
+				<a href="#" id="add">添加</a>
+				<a href="#" id="del">删除</a>
+				<span>支持选择5个老师</span>
+			</div>
+			<div class="c_list">
+				<h4>选择学生：</h4>
+				<ul id="c_ul_right">
+
+				</ul>
+			</div>
+		</div>
+		<!--end content-->
+		<div class="sub">
+			<a href="#">确 定</a>
+		</div>
+	</div>
+	<!--end qq-->
+
+<!--引入jQuery的官方类库-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//alert("亲爱的同学们，我爱你们，今天是感恩节 ！ 太棒了 ！");
+		$("#btn,.sub").click(function(){
+			$(".qq").toggle("slow");
+			$(".qq").show().addClass("magictime swap");
+		});
+
+		// 点击选中
+		$("#c_ul_left").find("li").click(function(){
+			$(this).toggleClass("sel");
+		});
+		
+		// 点击添加数据
+		$("#add").click(function(){
+			var selVal = $("#c_ul_left").find(".sel");
+			$("#c_ul_right").append(selVal.removeClass("sel").addClass("magictime twisterInDown"));
+		});
+		
+		// 点击删除
+		$("#del").click(function(){
+			var selVal = $("#c_ul_right").find(".sel");
+			$("#c_ul_left").append(selVal.removeClass("sel"));
+		
+		});
+	
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+		*{margin:0; padding:0;}
+		img{border:none;}
+		#header{background:url("img/bt.jpg") center no-repeat;/*背景图片*/ height:70px; width:1240px; margin:60px auto 10px auto;/*盒子居中*/ }
+		#box{width:1240px; margin:0 auto ;/*盒子居中*/ }
+		#box .box_left{ float:left; /*并排展示*/ width:468px; height:273px; border:1px solid #fff; padding:2px; box-shadow:1px 2px 3px  #b4c88b , -1px -2px 3px  #b4c88b;/*css3阴影*/}
+		#box .box_right{ float:right; /*并排展示*/ width:740px;}
+		#box .box_left:hover{box-shadow:0px 0px 15px  #000 ;}
+		#box .box_right .main{float:left; /*并排展示*/ width:224px; height:128px; border:1px solid #fff; padding:2px; box-shadow:1px 2px 3px  #b4c88b , -1px -2px 3px  #b4c88b;/*css3阴影*/ margin:0px 10px 10px 10px; position:relative;/*参照物*/z-index:1;}
+		#box .box_right .main:nth-child(3n){margin-right:0;}/*css3选择器*/
+		#box .box_right .main img{ width:224px; height:128px;}
+		#box .box_right .main:hover{box-shadow:0px 0px 15px  #000 ;  z-index:9997;}
+		#box .box_right .main img{position:absolute; top:2px; left:2px; z-index:9999;}
+		#box .box_right .main .title{position:absolute; top:0px; left:0px; width:120px; height:80px;background:#fff;line-height:20px; padding:4px; opacity:0;  overflow:hidden;}
+		#box .box_right .main .title h4{color:#996; font-size:14px; padding-top:20px;}
+		#box .box_right .main .title p{ font-size:12px;}
+		#box .box_right .main:hover .title{ transition:all 1S; top:128px; padding:8px;width:214px; left:-1px; height:130px;opacity:1;}
+  </style>
+ </head>
+ <body>
+		<div id="header"></div>
+		<div id="box">
+			<div class="box_left"><img src="img/8.jpg"/></div>
+			<div class="box_right">
+				<div class="main"><img src="img/1.jpg"/>
+					<div class="title">
+						<h4>TV动画《路人女主的养成方法》的OP曲~</h4>
+						<p>MV描述：春奈るな将于1月28日发行新单曲「君色シグナル」，新曲是为TV动画「冴えない彼女の育て...</p>
+					</div>
+				</div>
+				<div class="main"><img src="img/2.jpg"/>
+					<div class="title">
+						<h4>TV动画《路人女主的养成方法》的OP曲~</h4>
+						<p>MV描述：春奈るな将于1月28日发行新单曲「君色シグナル」，新曲是为TV动画「冴えない彼女の育て...</p>
+					</div>
+				</div>
+				<div class="main"><img src="img/3.jpg"/>
+					<div class="title">
+						<h4>TV动画《路人女主的养成方法》的OP曲~</h4>
+						<p>MV描述：春奈るな将于1月28日发行新单曲「君色シグナル」，新曲是为TV动画「冴えない彼女の育て...</p>
+					</div>
+				</div>
+				<div class="main"><img src="img/4.jpg"/>
+					<div class="title">
+						<h4>TV动画《路人女主的养成方法》的OP曲~</h4>
+						<p>MV描述：春奈るな将于1月28日发行新单曲「君色シグナル」，新曲是为TV动画「冴えない彼女の育て...</p>
+					</div>
+				</div>
+				<div class="main"><img src="img/5.jpg"/>
+					<div class="title">
+						<h4>TV动画《路人女主的养成方法》的OP曲~</h4>
+						<p>MV描述：春奈るな将于1月28日发行新单曲「君色シグナル」，新曲是为TV动画「冴えない彼女の育て...</p>
+					</div>
+				</div>
+				<div class="main"><img src="img/6.jpg"/>
+					<div class="title">
+						<h4>TV动画《路人女主的养成方法》的OP曲~</h4>
+						<p>MV描述：春奈るな将于1月28日发行新单曲「君色シグナル」，新曲是为TV动画「冴えない彼女の育て...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+ </body>
+</html>

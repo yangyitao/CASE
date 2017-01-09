@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style>
+	*{margin:0px; padding:0px;}
+  /*宽度:100m; 高度:183cm; css输入*/
+	#product{width:1200px; height:732px; background:url("img/bj.jpg"); margin:0px auto;}
+	#list{width:666px; min-height:532px;/*最小高度*/  float:right;margin-top:30px;}
+	#list ul li{list-style:none;width:156px; height:156px;margin:20px; float:left; background:#fff; border:3px solid #ccc; box-shadow:-2px -2px 3px #000,2px 2px 3px #f00;/*左右  上下 半径 颜色*/}
+	#list ul li img{width:156px; height:156px; transition:transform 800ms;}
+	#list ul li:hover{border:3px solid #cc33ff; box-shadow:-2px -2px 3px #000,2px 2px 3px #ccc; transform:rotate(360deg); /*css3 旋转*/ transition:transform 800ms;/*属性给变发生时间*/ }
+	#list ul li:hover img{transform:scale(1.7);}
+  </style>
+ </head>
+ <body>
+	<div id="product">
+		<div id="list">
+			<ul>
+				<li><a href="http://www.taobao.com"><img src="img/1.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/2.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/3.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/4.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/5.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/6.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/7.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/8.jpg"/></a></li>
+				<li><a href="http://www.taobao.com"><img src="img/9.jpg"/></a></li>
+			</ul>
+		</div>
+	</div>
+ </body>
+</html>

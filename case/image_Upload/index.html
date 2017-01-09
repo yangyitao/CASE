@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+   body{background-color:#3c8fc1; background-size:100%  100%; min-height:650px;}
+   .mmd{width:900px; height:350px;  background:url("images/bg.jpg") no-repeat; position:relative; top:120px;margin:0px auto;}
+	/*文本输入+上传*/
+   .mmd .m_up{position:absolute; top:182px; left:28px; width:355px; height:80px; background:#fff; padding:10px; border-radius:6px; }
+   .mmd .m_up .up{width:355px; height:80px;  border:1px solid #ccc; border-radius:6px;}
+    .mmd .m_up .up a {display:block; float:left;width:80px; height:80px; background:url("images/img.png") center no-repeat;  border-right:1px solid #ccc;}
+  .mmd .m_up .up a:hover{background:url("images/img.png") center no-repeat #f2f2f2;}
+   .mmd .m_up .up a  input{width:80px; height:80px; opacity:0; cursor:pointer; }
+.mmd .m_up .up textarea{width:252px; height:58px; padding:10px; border:0px;}
+   /*图片外壳样式*/
+   .mmd .showImg{position:absolute; top: 32px; right:58px; width:285px; height:285px;border-radius:12px; overflow:hidden; text-align:center; }
+	div.showImg{
+		text-align:center;
+	}
+	#preview{
+		border-radius:10px;
+	}
+	#f_name{
+		float:left;
+		border:none;
+		width:274px;
+		border-radius:3px;
+		height:78px;
+		line-height:78px;
+		font-size:20px;
+		font-family:'迷你简卡通';
+		color:#bbb;
+	}
+  </style>
+
+ </head>
+ <body>
+	<div class="mmd">
+		<div class="m_up">
+			<div class="up">
+				<a>
+					<input onchange="onup(this)" type="file" id="up_img" />
+				</a>
+				<input id="f_name" readonly=readonly cols="" rows="">
+				</input>
+			</div>
+		</div>
+		<div class="showImg"><img id="preview"  height="285px" /></div>
+	</div>
+	<script type="text/javascript" src="js/magnifier.js"></script>
+	<script type="text/javascript">
+	 function onup(sender){
+		if( !sender.value.match(/.jpg|.gif|.png|.bmp/i)){
+			alert("图片不正确");//弹出语
+			return false;
+		}
+	 var file = document.getElementById("up_img");
+	 var obj = document.getElementById("preview");
+	 var name = document.getElementById("f_name");
+	 if(sender.files && sender.files[0])
+	  //获取被上传的文件的完整路径 window.URL.createObjectURL(file.files[0]);
+	  name.value = '图片名称：'+file.files[0].name;
+	  obj.src = window.URL.createObjectURL(file.files[0]);
+	  obj.setAttribute('bigsrc',obj.src);
+	 }
+	</script>
+ </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+		*{margin:0px;padding:0px;}
+		body{background:#fff;}
+		.box{width:760px;height:300px;margin:50px auto;position:relative;}
+		.prev{
+			width:45px;height:100px;background:url("images/button.png");
+			position:absolute;left:0px;top:50%;margin-top:-50px;
+			opacity:0.4;display:none;
+			}
+		.next{
+			width:45px;height:100px;background:url("images/button.png");
+			background-position:-55px 0px;
+			position:absolute;right:0px;top:50%;margin-top:-50px;
+			opacity:0.4;display:none;
+			}
+		.pic{width:760px;height:300px;overflow:hidden;}
+		.pic ul li{
+			list-style-type:none;width:760px;height:300px;
+			position:relative;overflow:hidden;
+			}
+		.pic ul li .img1{position:absolute;left:-760px;top:0px;}
+		.pic ul li .img2{
+			position:absolute;left:-15px;top:0px;
+			display:none;
+			}
+		.nav{
+			width:100px;height:14px;
+			position:absolute;bottom:10px;right:20px;
+			}
+		.nav ul li{
+			list-style-type:none;width:12px;height:12px;
+			border:1px solid #fff;float:left;margin-right:5px;
+			}
+		.nav ul .bg{background:#ff7300;width:14px;height:14px;border:none;}
+  </style>
+ </head>
+ <body>
+	<div class="box">	
+		<div class="pic">
+			<ul>
+				<li style="background:url(images/bg1.jpg) center">
+					<img class="img1" src="images/text1.png" />
+					<img class="img2" src="images/con1.png" />
+				</li>
+				<li style="background:url(images/bg2.jpg) center">
+					<img class="img1" src="images/text2.png" />
+					<img class="img2" src="images/con2.png" />
+				</li>
+				<li style="background:url(images/bg3.jpg) center">
+					<img class="img1" src="images/text3.png" />
+					<img class="img2" src="images/con3.png" />
+				</li>
+				<li style="background:url(images/bg4.jpg) center">
+					<img class="img1" src="images/text4.png" />
+					<img class="img2" src="images/con4.png" />
+				</li>
+				<li style="background:url(images/bg5.jpg) center">
+					<img class="img1" src="images/text5.png" />
+					<img class="img2" src="images/con5.png" />
+				</li>
+			</ul>
+		</div>
+		<div class="prev"></div>
+		<div class="next"></div>
+		<div class="nav">
+			<ul>
+				<li class="bg"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var ali=$(".pic ul li ");
+			var aPage=$('#lunhuanback p');
+			var aslide_img=$('.lunhuancenter b');
+			var iNow=0;
+			ali.each(function(index){
+				$(this).mouseover(function(){
+					slide(index);
+				})
+			});
+			function slide(index){
+				iNow=index;
+				ali.eq(index).addClass('lunboone').siblings().removeClass();
+				aPage.eq(index).siblings().stop().animate({opacity:0},600);
+				aPage.eq(index).stop().animate({opacity:1},600);
+				aslide_img.eq(index).stop().animate({opacity:1,top:-10},600).siblings('b').stop().animate({opacity:0,top:-40},600);
+			}
+			function autoRun(){
+				iNow++;
+				if(iNow==ali.length){
+					iNow=0;
+				}
+				slide(iNow);
+			}
+			var timer=setInterval(autoRun,4000);
+			ali.hover(function(){
+				clearInterval(timer);
+			},function(){
+				timer=setInterval(autoRun,4000);
+			});
+		})
+	</script>
+ </body>
+</html>

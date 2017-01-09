@@ -1,0 +1,56 @@
+<!doctype html>
+<html >
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta charset="utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{margin:0;padding:0;}
+	.box{height:980px; background:url("img/bg2.jpg");}
+	.box .img{height:300px; padding-top:100px; text-align:center;/*设置内容居中*/ overflow:hidden;/*溢出元素强制隐藏*/}
+	.box .img img{-webkit-animation:imgtop 3S linear;}
+	/*css3 动画*/
+	@-webkit-keyframes imgtop{
+	from{transform:translateY(400px);}/*从哪里去？*/
+	to{transform:translateY(-100px);}/*到哪里去？*/
+	}
+	.book{width:1200px; height:380px;  margin:60px auto;/*将盒子水平居中 */}
+	.book ul{overflow:hidden; height:460px; -webkit-animation:book 3S linear;}
+	.book ul li{list-style:none; float:left;/*并排展示*/position:relative; /*采用定位作为参照物*/ cursor:pointer;/*鼠标样式*/ padding:80px 0px;}
+	.book ul li:nth-child(1){transform:rotate(-12deg );/*css3 倾斜*/ top:0px; left:34px; z-index:1;}
+	.book ul li:nth-child(2){transform:rotate(-5deg );/*css3 倾斜*/ top:-32px; left:16px;  z-index:2;}
+	.book ul li:nth-child(3){transform:rotate(0deg );/*css3 倾斜*/top:-43px; left:5px;  z-index:3;}
+	.book ul li:nth-child(4){transform:rotate(5deg );/*css3 倾斜*/ top:-32px; left:-6px;  z-index:1;}
+	.book ul li:nth-child(5){transform:rotate(12deg );/*css3 倾斜*/ top:0px; left:-24px;  z-index:2;}
+	.book ul li:nth-child(1):hover{top:-30px;}
+	.book ul li:nth-child(2):hover{top:-73px;}
+	.book ul li:nth-child(3):hover{top:-75px;}
+	.book ul li:nth-child(4):hover{top:-54px;}
+	.book ul li:nth-child(5):hover{top:-30px;}
+	@-webkit-keyframes book{
+	from{transform:translateY(150px); width:0px;}/*从哪里去？*/
+	to{transform:translateY(0px);width:1200px;}/*到哪里去？*/
+	}
+  </style>
+ </head>
+ <body>
+	<div class="box">
+		<div class="img">
+			<img src="img/wenzi.png"/>
+		</div>
+		<div class="book">
+			<ul>
+				<li><img src="img/shu_5.png"/></li>
+				<li><img src="img/shu_4.png"/></li>
+				<li><img src="img/shu_1.png"/></li>
+				<li><img src="img/shu_2.png"/></li>
+				<li><img src="img/shu_3.png"/></li>
+			</ul>
+		</div>
+	</div>
+ </body>
+</html>

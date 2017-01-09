@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+ <head>
+  <!--声明当前前页面的编码集：charset-gbk gb2312（中文编码） UTF-8国际编码-->
+  <!--当前页面三要素-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>jQuery天猫商城banner焦点图</title>
+<style type="text/css">
+body{background:white;font-family:"微软雅黑";}
+html{position:relative;}
+*{margin:0px;padding:0px;}
+img{border:0px;}
+li{list-style:none;}
+/*轮换大区域*/
+.lunhuan{width:100%;height:420px;position:relative;}
+.lunhuan #lunhuanback{width:100%;height:420px;position:absolute;left:0px;top:0px;overflow:hidden;}
+.lunhuan #lunhuanback p{width:100%;height:420px;position:absolute;left:0px;top:0px;opacity:0;filter:alpha(opacity=0);background-repeat:no-repeat;background-position:50% 0px;}
+.lunhuan .lunhuan_main{width:1190px;height:420px;margin:0 auto;position:relative;}
+/*左侧所有商品列表*/
+.suoyouliebiao{width:239px;position:absolute;left:0px;top:0px;border-left:1px solid #E6E6E6;border-bottom:1px solid #E6E6E6;z-index:200;box-shadow:5px 5px 5px rgba(0, 0, 0, 0.2);}
+/*轮换中间区域*/
+.lunhuancenter{width:757px;height:420px;position:absolute;left:240px;top:0px;}
+.lunhuancenter .centergif{display:block;width:760px;height:420px;position:absolute;left:0px;top:0px;z-index:4;}
+.lunhuancenter b{position:absolute;left:0px;top:-40px;opacity:0;filter:alpha(opacity=0);z-index:3;width:760px;height:210px;display:block;}
+#lunbonum{height:14px;line-height:23px;position:absolute;left:19px;top:393px;z-index:5;}
+#lunbonum li{width:14px;height:14px;float:left;margin-right:9px;background:#B4B4B4;border-radius:14px;cursor:pointer;}
+#lunbonum .lunboone{background:#C80002;cursor:pointer;}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var ali=$('#lunbonum li');
+    var aPage=$('#lunhuanback p');
+    var aslide_img=$('.lunhuancenter b');
+    var iNow=0;
+    ali.each(function(index){
+        $(this).mouseover(function(){
+            slide(index);
+        })
+    });
+    function slide(index){
+        iNow=index;
+        ali.eq(index).addClass('lunboone').siblings().removeClass();
+		aPage.eq(index).siblings().stop().animate({opacity:0},600);
+		aPage.eq(index).stop().animate({opacity:1},600);
+        aslide_img.eq(index).stop().animate({opacity:1,top:-10},600).siblings('b').stop().animate({opacity:0,top:-40},600);
+    }
+	function autoRun(){
+        iNow++;
+		if(iNow==ali.length){
+			iNow=0;
+		}
+		slide(iNow);
+	}
+	var timer=setInterval(autoRun,4000);
+    ali.hover(function(){
+		clearInterval(timer);
+	},function(){
+		timer=setInterval(autoRun,4000);
+    });
+})
+</script>
+</head>
+<body>
+<div class="lunhuan">
+    <div id="lunhuanback">
+        <p style='background-image:url(images/bg.jpg);opacity: 1;filter:alpha(opacity=100);'></p>
+        <p style='background-image:url(images/bg.jpg)'></p>
+        <p style='background-image:url(images/bg.jpg)'></p>
+        <p style='background-image:url(images/bg.jpg)'></p>
+        <p style='background-image:url(images/bg.jpg)'></p>
+    </div>
+    <div class="lunhuan_main">
+        <!-- 轮换中间区域 -->
+        <div class="lunhuancenter">
+            <a href="javascript:void(0)" class='centergif'></a>
+            <b class='slideUp' style='background-image:url(images/bg1.jpg);opacity:1;filter:alpha(opacity=100);top:-10px;'></b>
+            <b></b>
+            <b class='slideUp' style='background-image:url(images/bg2.jpg);'></b>
+            <b></b>
+            <b class='slideUp' style='background-image:url(images/bg3.jpg);'></b>
+            <!-- 轮播的页码  开始 -->
+            <ul id='lunbonum'>
+                <li class='lunboone'></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- 轮播的页码  结束 -->
+        </div>
+        <!-- 轮换中间区域结束 -->
+    </div>
+</div>
+<div style="text-align:center;clear:both"><br>
+</div>
+</body>
+</html>

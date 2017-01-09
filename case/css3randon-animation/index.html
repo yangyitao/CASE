@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>阿飞老师-vip课</title>
+		<style type="text/css">
+			*{ margin:0; padding:0;}
+			body{ overflow:hidden;}
+			.wrap{ width:800px; height:0; margin:20px auto;}
+			.wrap ul li{ list-style-type:none; width:350px; height:200px; float:left;		
+				margin:20px; color:#fff; text-align:center; line-height:200px;
+				font-size:40px; font-family:"Microsoft yahei"; position:relative;}
+		
+			.wrap .l1{ background:#D44825;}
+			.wrap .l2{ background:#2D8AF1;}
+			.wrap .l3{ background:#0CC5E7;}
+			.wrap .l4{ background:#666666;}
+			.wrap .l5{ background:#FF6E1A;}
+			.wrap .l6{ background:#64D500;}
+
+			.wrap ul li .pic{ width:350px; height:200px; position:absolute;
+				top:0; left:0; opacity:0; transition:.8s;}
+
+			.wrap ul li.rot{ -webkit-animation:rot .8s;}
+			.wrap ul li.top{ -webkit-animation:Top .8s;}
+			.wrap ul li.sca{ -webkit-animation:sca .8s;}
+			
+			.wrap ul li:hover .pic{ opacity:1;}
+
+			@-webkit-keyframes rot{
+				0%,20%,40%,60%,80%,100%{ -webkit-transform-origin:top center;}
+				0%{ -webkit-transform:rotate(0deg);}
+				20%{ -webkit-transform:rotate(-20deg);}
+				40%{ -webkit-transform:rotate(15deg);}
+				60%{ -webkit-transform:rotate(-10deg);}
+				80%{ -webkit-transform:rotate(5deg);}
+				100%{ -webkit-transform:rotate(0deg);}
+			}
+
+
+			@-webkit-keyframes Top{
+				0%{ top:0;}
+				20%{ top:20px;}
+				40%{ top:-15px;}
+				60%{ top:10px;}
+				80%{ top:-5px;}
+				100%{ top:0;}
+			}
+
+			@-webkit-keyframes sca{
+				0%{ -webkit-transform:scale(1);}
+				20%{ -webkit-transform:scale(1.1);}
+				40%{ -webkit-transform:scale(.9);}
+				60%{ -webkit-transform:scale(1.05);}
+				80%{ -webkit-transform:scale(.95);}
+				100%{ -webkit-transform:scale(1);}
+			}
+
+
+		</style>	
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li class="l1">
+					<p>WEB</p>
+					<a href="#" class="pic">
+						<img src="img/web.png" />
+					</a>
+				</li>
+				<li class="l2">
+					<p>JAVA</p>
+					<a href="#" class="pic">
+						<img src="img/java.png" />
+					</a>
+				</li>
+				<li class="l3">
+					<p>日语</p>
+					<a href="#" class="pic">
+						<img src="img/Jap.png" />
+					</a>
+				</li>
+				<li class="l4">
+					<p>IOS</p>
+					<a href="#" class="pic">
+						<img src="img/ios.png" />
+					</a>
+				</li>
+				<li class="l5">
+					<p>SEO</p>
+					<a href="#" class="pic">
+						<img src="img/seo.png" />
+					</a>
+				</li>
+				<li class="l6">
+					<p>电商</p>
+					<a href="#" class="pic">
+						<img src="img/taobao.png" />
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				var anim = ['rot','top','sca'];
+				var a,b;
+				$('.wrap ul li').hover(function(){
+					a = anim[Math.floor(Math.random()*3)];
+					while (b==a)
+					{
+						a = anim[Math.floor(Math.random()*3)];
+					}
+					$(this).toggleClass(a);	
+					b = a;
+				},function(){
+					$(this).toggleClass(a);			
+				});
+			});
+		</script>
+	</body>
+</html>

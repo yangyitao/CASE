@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+<style type="text/css">
+*{margin:0;/*外边距*/padding:0;/*外边距*/}
+.nav{width:210px;background:#cc0000;font-family:"微软雅黑";font-size:14px;}
+.nav > li{list-style:none;}
+.nav > li > a{color:#fff;/*文字颜色*/
+			 text-decoration:none;
+			 display:block;
+			 background:#b92422;/*背景颜色*/
+			 padding-left:15px;
+			 position:relative;
+			 height:40px;
+			 line-height:40px;
+			 box-shadow:0 1px 1px #d03b39 inset;
+			 border-bottom:1px solid #911c1c;
+			 }
+.nav > li > a > span{background:#9e1919;color:#fff;
+				position:absolute;/*绝对定位*/
+				top:10px;
+				right:5px;
+				display:block;
+				height:20px;
+				line-height:20px;
+				font-size:12px;/*字号*/
+				padding:0 5px;/*0 上下值，5px左右值*/
+				color:#f67d7b;
+				}
+/*二级导航-开始*/
+.nav > li > ul{background:#911c1c;
+					}
+.nav > li > ul > li > a{color:#fff;text-decoration:none;
+						display:block;
+						border-bottom:1px solid #821717;
+						height:35px;
+						line-height:35px;/*文字垂直居中*/
+						padding-left:20px;
+						color:#d44f4f;
+						}
+.nav > li > ul > li > a:hover{background:#ff6c00;color:#fff}
+ /*二级导航-结束*/
+/*鼠标滑过代码*/
+.nav > li > a:hover{background:#c72b29}
+.nav > li > a:hover span{color:#fff;}
+
+.nav > li > ul{height:0;overflow:hidden;/*多余隐藏，超出高度*/}
+.nav > li:target > ul{height:auto;background:#911c1c}
+</style>
+ </head>
+
+ <body>
+<div id="nav">
+<ul class="nav">
+	<li id="it1"><a href="#it1">IT培训 <span>更多</span></a>
+	<!--鼠标点击显示内容-开始-->
+	 <ul>
+	    <li><a href="#">网页制作</a></li>
+		<li><a href="#">编程语言</a></li>
+		<li><a href="#">网页/平面设计</a></li>
+		<li><a href="#">手机开发</a></li>
+		<li><a href="#">办公</a></li>
+		<li><a href="#">视频处理</a></li>
+		<li><a href="#">机械/模具设计</a></li>
+	 </ul>
+	<!--鼠标点击显示内容-结束-->
+	</li>
+	<li id="it2"><a href="#it2">语言培训<span>更多</span></a>
+	<!--鼠标点击显示内容-开始-->
+	 <ul>
+	   <li><a href="#">英语口语</a></li>
+					<li><a href="#">日语</a></li>
+					<li><a href="#">韩语</a></li>
+					<li><a href="#">旅行英语</a></li>
+
+	 </ul>
+	<!--鼠标点击显示内容-结束-->	
+	</li>
+	<li id="it3"><a href="#it3">亲子课堂<span>更多</span></a>
+	<!--鼠标点击显示内容-开始-->
+	 <ul>
+		<li><a href="#">考研/自考</a></li>
+		<li><a href="#">中考备战</a></li>
+		<li><a href="#">高考备战</a></li>
+
+	 </ul>
+	<!--鼠标点击显示内容-结束-->
+	</li>
+	<li id="it4"><a href="#it4">中小学/大学<span>更多</span></a>
+	<!--鼠标点击显示内容-开始-->
+	 <ul>
+	    <li><a href="#">网页制作</a></li>
+		<li><a href="#">编程语言</a></li>
+		<li><a href="#">网页/平面设计</a></li>
+		<li><a href="#">手机开发</a></li>
+		<li><a href="#">办公</a></li>
+		<li><a href="#">视频处理</a></li>
+		<li><a href="#">机械/模具设计</a></li>
+	 </ul>
+	<!--鼠标点击显示内容-结束-->
+	</li>
+</ul>
+</div>
+ </body>
+<!--
+1,target 选择器， 用来获取当前活动的目标元素
+-->
+</html>

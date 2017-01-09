@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码集charset=gbk，bg2312中文编码，utf-8国际编码-->
+  <meta charset="UTF-8">
+  <!--当前页面的三要素-->
+  <title>jQuery实现图片</title>
+  <meta name="Keywords" content="关键词，关键词">
+  <meta name="Description" content="描述">
+  <!--css-->
+  <style>
+*{margin:0;padding:0;}
+ul{list-style:none}
+body{font-size:14px;font-family:"微软雅黑"}
+.box{margin:100px auto 0;
+	 overflow:hidden;/*溢出隐藏（多余隐藏）*/
+	 height:500px;
+	 position:relative;/*相对定位*/
+	 width:1000px;
+	}
+/*图片部分-开始*/
+#img{position:absolute;
+	 top:0;
+	 left:0; 
+	 z-index:1;
+	 width:10000px;
+	}
+#img ul li{float:left;}
+
+/*图片部分-结束*/
+/*按钮-开始*/
+.bottom a{top:50%;z-index:1;
+		width:60px;
+		height:60px;
+		margin-top:-30px;
+		outline:none;}
+.left_bot{background:url(images/left.png) no-repeat;/*背景图片*/
+		  display:block;
+		  position:absolute;
+		  left:10px;		  
+		 }
+.right_bot{background:url(images/right.png) no-repeat;
+		   position:absolute;
+		   right:0;
+		  }
+/*按钮-结束*/
+  </style>
+ </head>
+ <body>
+  <div class="box">
+  <div id="img">
+	 <ul>
+		<li><img src="images/1.jpg"/></li>
+		<li><img src="images/2.jpg"/></li>
+		<li><img src="images/3.jpg"/></li>
+		<li><img src="images/4.jpg"/></li>
+		<li><img src="images/5.jpg"/></li>
+		<li><img src="images/6.jpg"/></li>
+	</ul>
+  </div>
+	<!--左右按钮-开始-->
+  <div class="bottom">
+	<a href="#" class="left_bot"></a>
+	<a href="#" class="right_bot"></a>
+  </div>
+	<!--左右按钮-结束-->
+  </div>
+  <!--js-->
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+ <script type="text/javascript">
+ var clicknum=0;//鼠标点击次数(这是名字自己可以随便定义)
+  
+  $ (".left_bot").click(function(){
+	
+		clicknum++;//鼠标点击次数加1 clicknum=cliknum+1
+		if(clicknum>5){
+			clicknum=0;
+		}
+		 $("#img").animate({left:"-"+clicknum*1000+"px"},500);/*animate动画函数，是通过CSS样式将元素从一个状态改变为另一个状态,500动画时间，“”变字符串， + + 拼接*/
+		//alert("今天我上课")
+	    });
+
+//右边点击内容
+	$ (".right_bot").click(function(){
+		clicknum--;//鼠标点击次数加1 clicknum=cliknum+1
+		if(clicknum<0){
+			clicknum=5;
+		}
+		 $("#img").animate({left:"-"+clicknum*1000+"px"},500);/*animate动画函数,500动画时间*/
+	   });
+   
+ </script>
+ </body>
+</html>

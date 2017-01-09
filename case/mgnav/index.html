@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>魔鬼街首页导航</title>
+  <style type="text/css">
+	*{margin:0px;padding:0px;}
+	.web{width:1345px;height:680px;}
+	.web ul{
+			width:855px;height:25px;
+			margin:0px auto;
+			}
+	.web ul li{
+				width:120px;height:22px;
+				float:left;
+				list-style-type:none;
+				}
+	.web ul li a{
+					width:65px;height:22px;
+					display:block;
+					text-align:center;line-height:22px;
+					font-weight:bold;font-size:14px;color:#333;
+					text-decoration:none;
+					float:right;
+					}
+	.web ul li a:hover{
+						background:#f46;
+						color:#fff;
+						border:1px solid #f46;
+						border-radius:20px;
+						}
+	.web ul li span{
+					float:left;color:#ddd;font-size:10px;
+					line-height:22px;
+					margin-left:20px;
+					display:block;
+					}
+	.con{width:1345px;height:500px;overflow:hidden;}
+	.con img{display:none;}
+  </style>
+ </head>
+ <body>
+	<div class="web">
+		<img src="images/title.jpg">
+		<ul>
+			<li>
+				<a href="#">首页</a>
+			</li>
+			<li>
+				<span>|</span><a href="#">服饰</a>
+			</li>
+			<li>
+				<span>|</span><a href="#">搭配</a>
+			</li>
+			<li>
+				<span>|</span><a href="#">达人</a>
+			</li>
+			<li>
+				<span>|</span><a href="#">手美</a>
+			</li>
+			<li>
+				<span>|</span><a href="#">买妆</a>
+			</li>
+		</ul>
+		<div class="con">
+			<img src="images/con1.jpg" />
+			<img src="images/con2.jpg" />
+			<img src="images/con3.jpg" />
+			<img src="images/con4.jpg" />
+			<img src="images/con5.jpg" />
+			<img src="images/con6.jpg" />
+			<img src="images/con7.jpg" />
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('.web ul li').click(function(){
+			var i=$(this).index();
+		$('.con img').eq(i).show().siblings().hide();
+		})
+	</script>
+ </body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码集charset=gbk，gb2312中文编码，utf-8国际编码-->
+  <meta charset="UTF-8">
+  <!--当前页面的三要素-->
+  <title></title>
+  <meta name="Keywords" content="关键词，关键词">
+  <meta name="Description" content="描述">
+  <!--css，js-->
+  <style type="text/css">
+*{margin:0;padding:0;}
+body{font-size:14px;font-family:"微软雅黑";background:#eee;}
+.mian{width:960px;margin:50px auto;}
+.m_all{width:200px;
+		height:300px;
+		padding:10px;
+		color:#252525;
+		text-align:center;
+		background:#fff;
+		box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+		position:relative;
+		overflow:hidden;
+		transition:all 300ms linear;
+		float:left;
+		margin-right:20px;
+		}
+/*标题*/
+.m_all h1{
+        font-size:45px;
+		height:120px;
+		line-height:120px;
+		transition:all 300ms linear;
+		}
+/*中间内容-开始*/
+.mc{font-size:26px;
+	transition:all 300ms linear;
+	}
+
+/*底部内容-开始*/
+.mb{position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	text-align:center;
+	height:36px;
+	line-height:36px;
+	opacity: 0.8;
+	}
+
+/*最后一个div不要右浮动*/
+.m_all:last-child{margin-right:0}
+/*鼠标划过显示-开始*/
+.m_all:hover{background:#000;color:#fff;}
+.m_all:hover h1{color:#eee;animation:Bottom 300ms ease;
+    animation-fill-mode:forwards;
+    /**/
+}
+.m_all:hover .mc{animation:Big 300ms ease}
+.m_all:hover .mb{animation:moveBottom 300ms ease;background:#993333;opacity:1;}
+
+@keyframes moveBottom{
+	from{
+		transform:translateY(100%)
+	}
+	to{
+		transform:translateY(0%);)
+	}
+}
+@keyframes Bottom{
+	from{
+	transform:scale(0.1) rotate(0deg)
+	}
+	to{
+	transform:scale(1.5) rotate(360deg);
+	}
+}
+@keyframes Big{
+	from{
+	transform:scale(0.1)
+	}
+	to{
+	transform:scale(1);
+	}
+}
+
+  </style>
+ </head>
+ <body>
+ <div class="mian">
+	<div class="m_all">
+		<h1>A</h1>
+		<!--中间内容-开始-->
+		<div class="mc">
+		HTML+CSS
+		</br>
+		用代码创造梦想
+		</div>
+		<!--中间内容-结束-->
+		<!--底部内容-开始-->
+		<div class="mb">
+			付出不亚于任何人的努力
+		</div>
+		<!--底部内容-结束-->
+	</div>
+
+	<div class="m_all">
+		<h1>B</h1>
+		<!--中间内容-开始-->
+		<div class="mc">
+		HTML+CSS
+		</br>
+		用代码创造梦想
+		</div>
+		<!--中间内容-结束-->
+		<!--底部内容-开始-->
+		<div class="mb">
+			付出不亚于任何人的努力
+		</div>
+		<!--底部内容-结束-->
+	</div>
+
+	<div class="m_all">
+		<h1>C</h1>
+		<!--中间内容-开始-->
+		<div class="mc">
+		HTML+CSS
+		</br>
+		用代码创造梦想
+		</div>
+		<!--中间内容-结束-->
+		<!--底部内容-开始-->
+		<div class="mb">
+			付出不亚于任何人的努力
+		</div>
+		<!--底部内容-结束-->
+	</div>
+
+	<div class="m_all">
+		<h1>D</h1>
+		<!--中间内容-开始-->
+		<div class="mc">
+		HTML+CSS
+		</br>
+		用代码创造梦想
+		</div>
+		<!--中间内容-结束-->
+		<!--底部内容-开始-->
+		<div class="mb">
+			付出不亚于任何人的努力
+		</div>
+		<!--底部内容-结束-->
+	</div>
+ </div>
+ </body>
+</html>

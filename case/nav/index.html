@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{margin:0px; padding:0px; font-family:"微软雅黑";}
+	a{color:#fff; font-size:14px;text-decoration:none;}
+	.height_1200{height:1200px;}
+	 #header{background:#15171F; height:80px; width:100%;}
+	 #header img{padding:23px 80px;}
+	 #banner{background:url("img/2.jpg") center; height:365px; width:100%;}
+	 #banner a{display:block;/*将a行元素改变为块元素*/height:365px; width:100%;}
+	 #nav{width:220px; height:390px; background:#00A200; position:fixed;/*固定定位*/ top:80px; left:50px; border-radius:6px;/*小圆角*/box-shadow:2px 2px 6px #303030; /*阴影*/ padding-top:30px;}
+	 #nav dl{position:relative;/*作为参照物*/ border-top:1px solid #01ac01;  border-bottom:1px solid #048f04; overflow:hidden;}
+	 #nav dl dt{width:100%;}
+	 #nav dl dd{width:100%;position:absolute; left:-220px; top:0px;/*设置他跑出去*/ background:#f89303; opacity:1; transition:all 900ms linear;/*过渡*/}
+	 #nav dl  a{display:block;height:40px; line-height:40px; padding-left:60px;}
+	 /*取消第一个dl的开头线*/
+	  #nav dl:nth-child(1){border-top:none;}
+	   #nav dl:last-child{border-bottom:none;}/*最后 一个*/
+	  #nav dl:hover dd{left:0px;top:0px; opacity:1;}
+  </style>
+ </head>
+ <body>
+		<div id="header">
+			<a href="http://www.tanzhouedu.com/">
+				<!-- 插入一张图-->
+				<!-- <img src="img/logo.png"/> -->
+			</a>
+		</div>
+		<div id="banner">
+			<a href="http://www.tanzhouedu.com/">
+			</a>
+		</div>
+		<div id="nav">
+			<dl>
+				<dt><a href="http://www.tanzhouedu.com/">首页</a></dt>
+				<dd><a href="http://www.tanzhouedu.com/">付出不亚于任何的努力</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="http://www.tanzhouedu.com/">菜单导航</a></dt>
+				<dd><a href="http://www.tanzhouedu.com/">谦虚戒骄</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="http://www.tanzhouedu.com/">div标签</a></dt>
+				<dd><a href="http://www.tanzhouedu.com/">天天反省</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="http://www.tanzhouedu.com/">系统学习班</a></dt>
+				<dd><a href="http://www.tanzhouedu.com/">活着就要感谢</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="http://www.tanzhouedu.com/">html5课程</a></dt>
+				<dd><a href="http://www.tanzhouedu.com/">积善行，思利他</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="http://www.tanzhouedu.com/">jquery特效</a></dt>
+				<dd><a href="http://www.tanzhouedu.com/">不要有感性的烦扰</a></dd>
+			</dl>
+			<dl>
+
+			</dl>
+		</div>
+		<!--<div class="height_1200" style="height:200px;"></div>-->
+ </body>
+</html>

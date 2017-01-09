@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片列表</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+.piclist{
+	margin:50px auto;
+	width:642px;
+	font-size:0;
+	line-height:0;
+}
+.piclist li{
+	display:inline-block; 
+	width:200px; 
+	height:150px;
+	margin:2px;
+	border:5px solid #FFF;
+	-webkit-transition:all .9s ease;
+}
+
+.piclist:hover li:not(:hover){
+	opacity:.5;
+	filter:blur(2px) grayscale(1);
+}
+</style>
+</head>
+
+<body>
+<ul class="piclist">
+	<li><img src="img/1.jpg" width="200" height="150"/></li>
+    <li><img src="img/2.jpg" width="200" height="150"/></li>
+    <li><img src="img/3.jpg" width="200" height="150"/></li>
+    <li><img src="img/4.jpg" width="200" height="150"/></li>
+    <li><img src="img/5.jpg" width="200" height="150"/></li>
+    <li><img src="img/6.jpg" width="200" height="150"/></li>
+</ul>
+</body>
+</html>

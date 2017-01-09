@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>vip课</title>
+		<!--css 层叠样式表 包装 衣服-->
+		<style>
+			*{margin:0;padding:0;font-family:"微软雅黑";}
+			body{background:#282828;}
+			#main{width:900px;height:575px;margin:20px auto;}
+			.left,.mid,.right{width:280px;height:575px;}
+			.left{float:left;}
+			.mid{float:left;margin-left:30px;}
+			.right{float:right;}
+			.txt,.pic{width:280px;height:280px;}
+			.bot{margin-top:15px;}
+			.txt{background:#4F3F3F;}
+			.txt h2{font-size:40px;color:#EB614A;text-align:center;padding-top:80px;}
+			.txt h3{font-size:12px;color:#EB614A;padding:0 20px;}
+			.txt p{font-size:12px;color:#fff;line-height:25px;padding:0 20px;}
+
+			img{animation:mov 2s infinite;}
+			@keyframes mov{
+				form{transform:rotateY(0deg);}
+				to{transform:rotateY(360deg);}
+			}
+
+			h2{animation:txt 2s infinite;}
+			@keyframes txt{
+				0%{text-shadow:0 0 0px #ff0;}
+				50%{text-shadow:0 0 10px #ff0;}
+				100%{text-shadow:0 0 0px #ff0;}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- div 盒子模型 -->
+		<div id="main">
+			<!--左边区域-->
+			<div class="left">
+				<img src="images/1.jpg" />
+			</div>
+
+			<!--中间区域-->
+			<div class="mid">
+				<!--文本-->
+				<div class="txt">
+					<h2>Jeremy Scott</h2>
+					<h3>潮人徐峰立独家解读</h3>
+					<p>对顽童而言果然什么都能穿。万花筒似的秀上能找到毛茸茸的史迪奇，晕眩状圈圈，暴怒的
+					海绵宝宝，杀死比尔套装，甚至一个篮球（是的，一个穿在身上的篮球！）。</p>
+				</div>
+
+				<!--图片-->
+				<div class="pic bot">
+					<img src="images/2.jpg" />
+				</div>
+			</div>
+
+			<!--右边区域-->
+			<div class="right">
+				<!--图片-->
+				<div class="pic">
+					<img src="images/3.jpg" />
+				</div>
+
+				<!--文字-->
+				<div class="txt bot">
+					<h2>Jeremy Scott</h2>
+					<h3>潮人徐峰立独家解读</h3>
+					<p>对顽童而言果然什么都能穿。万花筒似的秀上能找到毛茸茸的史迪奇，晕眩状圈圈，暴怒的
+					海绵宝宝，杀死比尔套装，甚至一个篮球（是的，一个穿在身上的篮球！）。</p>
+				</div>
+				
+			</div>
+
+		</div>
+	</body>
+</html>
+<!--
+	id="身份证号"  class="名字 名字"
+-->

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+	<style type="text/css">
+		body{background:url("images/bg.jpg");}
+	</style>
+ </head>
+ <body>
+	<embed hidden="true" loop="5" src="music/christmas.mp3">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.snow.min.js"></script>
+	<script>
+		$(document).ready( function(){
+				$.fn.snow({
+					minSize:10,
+					maxSize:100,
+					newOn:500,
+					flakeColor:"#ffffff"
+				});
+
+				$.fn.snow({
+					minSize:5,
+					maxSize:100,
+					newOn:500,
+					flakeColor:"#ffff66"
+				});
+
+				$.fn.snow({
+					minSize:5,
+					maxSize:50,
+					newOn:500,
+					flakeColor:"#99ffff"
+				});
+								$.fn.snow({
+					minSize:1,
+					maxSize:10,
+					newOn:500,
+					flakeColor:"#000000"
+				});
+
+		})
+	</script>
+ </body>
+</html>

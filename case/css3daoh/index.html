@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码集charset=gbk，bg2312中文编码，utf-8国际编码-->
+  <meta charset="UTF-8">
+  <!--当前页面的三要素-->
+  <title>css3实现导航滑动效果</title>
+  <meta name="Keywords" content="关键词，关键词">
+  <meta name="Description" content="描述">
+
+  <!--css，js-->
+<style>
+*{margin:0;padding:0}
+ul{list-style:none}
+body{font-size:14px;
+	 font-family:"微软雅黑";
+	 background:#f0eeee;
+     }
+/*导航内容区域-开始*/
+.nav{background:#00a200;
+	width:220px;
+	height:390px;
+	padding-top:30px;
+	border-radius:3px;}
+.nav ul{border-bottom:1px solid #01ac01;
+		height:335px;}
+.nav ul li {position:relative;
+			border-bottom:1px solid #048f04;
+			border-top:1px solid #01ac01;
+			}
+.nav ul li a{color:#fff;
+			 text-decoration:none;
+			 text-align:left;
+			 padding-left:60px;
+			 display:block;
+			 line-height:40px;
+			 width:160px;
+			 height:40px;
+			 }
+/*划过代码-开始*/		
+.nav ul li:hover .hover{left:0}
+.hover{position:absolute;
+	   top:0;
+	   left:-215px;
+	   width:210px;
+	   height:40px;
+	   line-height:40px;
+	   color:#fff;
+	   padding-left:10px;
+	   background:#f89303;
+	   transition:all 900ms linear
+	   }
+.nav ul li .hover a{padding-left:0;
+					text-align:center;
+					}
+/*划过代码-结束*/
+/*导航内容区域-结束*/
+
+/*边框线--开始*/
+.nav ul li.btop_no{border-top:none}
+ /*边框线--结束*/
+</style>
+ </head>
+ <body>
+  <div class="nav">
+    <ul>
+	 <li class="btop_no"><a href="" target="_blank">首页</a>
+	 <!--划过显示内容-开始-->
+	  <div class="hover"><a href="">付出不亚于任何的努力！</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li><a href="" target="_blank">菜单导航</a>
+	  <!--划过显示内容-开始-->
+	  <div class="hover"><a href="">谦虚戒骄</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li><a href="" target="_blank">div标签</a>
+	  <!--划过显示内容-开始-->
+	  <div class="hover"><a href="">天天反省</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li><a href="" target="_blank">系统学习班</a>
+	  <!--划过显示内容-开始-->
+	  <div class="hover"><a href="">活着就要感谢</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li><a href="" target="_blank">div标签</a>
+	  <!--划过显示内容-开始-->
+	  <div class="hover"><a href="">积善行，思利他</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li><a href="" target="_blank">jquery特效</a>
+	  <!--划过显示内容-开始-->
+	  <div class="hover"><a href="">不要有感性的烦扰</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li><a href="" target="_blank">在线客服</a>
+	 <!--划过显示内容-开始-->
+	 <div class="hover"><a href="">只有行动才能实现</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	 <li class="b_bottom"><a href="" target="_blank">图片特效</a>
+	 <!--划过显示内容-开始-->
+	 <div class="hover"><a href="">css3实现鼠标划过导航</a></div>
+	 <!--划过显示内容-结束-->
+	 </i>
+	</ul>
+  </div>
+ </body>
+</html>

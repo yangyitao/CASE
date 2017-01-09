@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+	<style type="text/css">
+		*{margin:0px; padding:0px;}
+		#top{width:100%; height:77px;background:#3e2b24; padding:20px 0px; text-align:center;/*内容居中*/ }
+		#nav{width:100%;height:50px;background:url("img/bg.jpg");}
+		#nav ul{width:980px; margin:0px auto;/*盒子居中*/ }
+		#nav ul li{list-style:none;/*标志去除*/width:136px; height:50px; color:#FFFFFF; float:left;/*并排展示 浮动*/text-align:center; line-height:50px;/*文字行高*/ font-family:"微软雅黑";}
+		#nav ul li:hover{background:url("img/hover.jpg"); cursor:pointer;}
+		/*banner*/
+		#banner{width:100%;height:450px; overflow:hidden;/*超出范围隐藏*/box-shadow:3px 3px 6px #666666;/*css3阴影*/ margin-bottom:100px;position:relative; /*定位参考对象*/}
+		#banner .cont {width:100%; position:absolute; top:0px; -webkit-animation:banner 15S linear infinite;}
+		#banner .cont li{width:100%;height:450px; list-style:none;}
+		#banner .cont li:nth-child(1){background:url("img/1.jpg") center;}
+		#banner .cont li:nth-child(2){background:url("img/2.jpg") center;}
+		#banner .cont li:nth-child(3){background:url("img/3.jpg") center;}
+		#banner .cont li:nth-child(4){background:url("img/4.jpg") center;}
+		#banner .cont li:nth-child(5){background:url("img/5.jpg") center;}
+		/* 规定动画。 banner	*/
+		@-webkit-keyframes	banner{
+			0%{top:0px;}/* 从*/
+			19%{top:0px;}
+			20%{top:-450px;}
+			39%{top:-450px;}
+			40%{top:-900px;}/* 从*/
+			59%{top:-900px;}
+			60%{top:-1350px;}
+			79%{top:-1350px}
+			80%{top:-1800px;}
+			99%{top:-1800px;}
+			100%{top:0px;}/*到*/
+		}
+		#banner .in{width:300px; height:10px; position:absolute; right:60px;  bottom:30px;}
+		#banner .in li{list-style:none;width:50px; height:10px; color:#FFFFFF; float:left;background:rgba(0,0,0,0.3); margin-right:10px;border-radius:10px;/*css3圆角*/}
+		#banner .in #xz{position:absolute; left:120px;  top:0px;  -webkit-animation:xz 15S linear infinite ;}
+		@-webkit-keyframes	xz{
+			0%{left:0px; background:#fec425;}/* 从*/
+			19%{left:0px; background:#fec425;}
+			20%{left:60px; background:#c40002;}
+			39%{left:60px;  background:#c40002;}
+			40%{left:120px;  background:#f06a23;}/* 从*/
+			59%{left:120px;  background:#f06a23;}
+			60%{left:180px; background:#ffffff;}
+			79%{left:180px; background:#ffffff;}
+			80%{left:240px; background:#1363a0;}
+			99%{left:240px; background:#1363a0;}
+			100%{left:0px;background:#fec425;}/*到*/
+		}
+	</style>
+ </head>
+ <body>
+  <div id="top">
+		<img src="img/logo.png"/>
+  </div>
+	<div id="nav">
+		<ul>
+			<li>首页</li>
+			<li>关于我们</li>
+			<li>在线预展</li>
+			<li>精品欣赏</li>
+			<li>鉴定专家</li>
+			<li>在线征集</li>
+			<li>联系我们</li>
+		</ul>
+	</div>
+	<div id="banner">
+		<ul class="cont">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="in">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li id="xz"></li>
+		</ul>
+	</div>
+  <!--总结
+  1. 在页面创建了一个名字为top的盒子（div），为他化妆（css）
+  2。浏览器兼容 边距 -》外 内  盒子与外面的距离  盒子与里面内容的距离
+  3.为页面添加图片 src 路径
+  4.无序列表 一个父亲多个子项  float  浮动  文字内容居中
+  5.背景图片图片居中 
+  -->
+ </body>
+</html>

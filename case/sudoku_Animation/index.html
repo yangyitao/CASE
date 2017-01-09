@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 css 变漂亮 衣柜-->
+  <style type="text/css">
+	*{margin:0;padding:0;}
+	body{background:url("images/bg.jpg");}
+	#dome{width:906px; height:486px; background:rgba(0,0,0,0.4); margin:80px auto; border:5px solid #fff;}
+	#dome ul li{width:300px; height:160px;background:#00cc00;border:1px solid #fff; float:left; list-style:none;position:relative;/*做为参照物*/}
+	#dome ul li .default{opacity:1;}
+	/*公用img的样式*/
+	#dome ul li img{position:absolute; top:0px; left:0px; width:100%; height:100%; opacity:0; transition:all 1s linear;}
+	#dome ul li a{position:absolute; top:0px; left:0px; width:100%; height:100%; text-align:center; line-height:160px; font-size:20px; color:#fff; text-decoration:none; background:rgba(0,0,0,0.5);font-weight:bold; display:none;}
+	#dome ul li:hover a{display:block;}
+	#dome ul li:hover .top{top:-162px; opacity:1; height:162px; z-index:9999;}
+	#dome ul li:hover .left{left:-302px; opacity:1; width:302px;z-index:9999;}
+	#dome ul li:hover .bottom{top:160px; opacity:1; height:162px;z-index:9999;}
+	#dome ul li:hover .right{left:300px; opacity:1;width:302px;z-index:9999;}
+
+  </style>
+ </head>
+ <body>
+		<div id="dome">
+			<ul>
+				<li>
+					<img src="images/img1.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_SEO课程</a>
+					<img src="images/seor.jpg" class="bottom"/>
+					<img src="images/seor.jpg" class="right"/>
+				</li>
+				<li>
+					<img src="images/img2.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_淘宝美工课程</a>
+					<img src="images/taol.jpg" class="left"/>
+					<img src="images/taor.jpg" class="right"/>
+					<img src="images/taob.jpg" class="bottom"/>
+				</li>
+				<li>
+					<img src="images/img3.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_摄影后期课程</a>
+					<img src="images/syl.jpg" class="left"/>
+					<img src="images/syb.jpg" class="bottom"/>
+				</li>
+				<li>
+					<img src="images/img4.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_软件编程课程</a>
+					<img src="images/jt.jpg" class="top"/>
+					<img src="images/jr.jpg" class="right"/>
+					<img src="images/jb.jpg" class="bottom"/>
+				</li>
+				<li>
+					<img src="images/img5.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_网页制作课程</a>
+					<img src="images/wt.jpg" class="top"/>
+					<img src="images/wl.jpg" class="left"/>
+					<img src="images/wb.jpg" class="bottom"/>
+					<img src="images/wr.jpg" class="right"/>
+				</li>
+				<li>
+					<img src="images/img6.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_平面设计课程</a>
+					<img src="images/pt.png" class="top"/>
+					<img src="images/pl.jpg" class="left"/>
+					<img src="images/pb.jpg" class="bottom"/>
+				</li>
+				<li>
+					<img src="images/img7.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_语言学习课程</a>
+					<img src="images/ynt.jpg" class="top"/>
+					<img src="images/ynr.jpg" class="right"/>
+				</li>
+				<li>
+					<img src="images/img8.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_室内设计课程</a>
+					<img src="images/snt.jpg" class="top"/>
+					<img src="images/snl.jpg" class="left"/>
+					<img src="images/snr.jpg" class="right"/>
+				</li>
+				<li>
+					<img src="images/img9.png" class="default"/>
+					<a href="http://www.tanzhouedu.com">潭州学院_网络营销课程</a>
+					<img src="images/wlt.jpg" class="top"/>
+					<img src="images/wll.jpg" class="left"/>
+				</li>
+			</ul>
+		</div>
+ </body>
+ <!--总结
+ 1.div+css-〉div 布局 css化妆
+ 2. 为body 添加了一件漂亮的衣服
+ 3.div 盒子。》 创建一个大小为。。。。px（单位）的盒子
+ 4.无序列表ul li
+ 5. li 并排展示-》 美人痣 88！
+ 6. img 图片
+ 7.a 超链接标签
+ 8. 位置 关系问题 position  参照物
+ 9.鼠标经过->显示 a
+ 
+ -->
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码格式 UTF-8（国际编码）gbk(中文简体)-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!--声明当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键字">
+	<meta name="Description" content="描述">
+  <!--样式 引用css 变漂亮 衣柜-->
+<style type="text/css">
+*{margin:0px;}
+/*css样式的表达方式： 属性：值； 身高：1.65m;  颜色：红色；px 像素*/
+body{background:#fff;}
+#Con{width:570px;/*宽*/ height:270px;/*高*/ /*background:#99ff33;背景颜色*/
+	margin:100px auto 0px; border:1px dashed #ff0066;/*粗细 风格 颜色*/
+	position:relative;/*相对定位*/}
+#Con img.but1{position:absolute;/*绝对定位*/ top:100px; left:0px;}
+#Con img.but2{position:absolute;/*绝对定位*/ top:100px; right:0px;}
+#Con .scroll{width:510px; height:220px;  margin:30px auto 0px;
+			 overflow:hidden;/*超出部分内容隐藏*/ position:relative;}
+#Con .ImgList{width:10000px; height:215px; 	position:absolute; top:0px; 
+			left:0px;}
+
+#Con .scroll .ImgList dl{width:150px; height:210px; float:left;/*左浮动*/ margin:0px 10px;}
+#Con .scroll .ImgList dl dt{width:150px;height:150px; background:#66ff33;}
+#Con .scroll .ImgList dl dd{width:150px; height:25px;font-size:12px; text-align:center;/*水平距中*/ line-height:25px;}
+#Con .scroll .ImgList dl dd span{color:#ff0066; font-weight:bold;/*加粗*/}
+</style>
+ </head>
+ <body>
+<!--div盒子模型，高度，宽度，放内容的长方形容器  姓名="张三"-->
+<div id="Con">
+	<img src="images/dirl.jpg" class="but1"/>
+	<img src="images/dirr.jpg" class="but2"/>
+	<div class="scroll">
+		<div class="ImgList">
+			<dl>
+				<dt><img src="images/rec_img1.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img2.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img3.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img4.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img5.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img6.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img7.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img8.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+			<dl>
+				<dt><img src="images/rec_img9.jpg" /></dt>
+				<dd>马尔代夫泰姬珊瑚四晚..</dd>
+				<dd>抢购价：<span>13760元</span></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<!--引用外部jquery类库文件 -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+var clicknum=0;//鼠标点击次数
+//左按扭鼠标点击事件
+	$("#Con img.but1").click(function(){
+		clicknum++;//鼠标点击次数加1 clicknum=clicknum+1
+		//alert(clicknum);
+		if(clicknum<=2){
+			$("#Con .scroll .ImgList").animate({left:"-"+clicknum*510+"px"},500);
+		}else{ alert("左边到头了");clicknum=2; }
+	});
+
+//右按扭鼠标点击事件
+	$("#Con img.but2").click(function(){
+		clicknum--;// 点击次数减1 clicknum-1;	
+		alert(clicknum);
+		if(clicknum>=0){
+			$("#Con .scroll .ImgList").animate({left:"-"+clicknum*510+"px"},500);
+		}else{alert("右边到头了"); clicknum=0;}
+	});
+</script>
+
+<!--
+	1、如何构建一个有宽度，有高度的长方形容器（div盒子模型）
+	2、讲到了外边距的概念 margin, 解决了外边距的兼容问题 *｛margin:0px;｝
+	3、利用外边距来控制长方形的位置，margin:上(100px) 左右(auto) 下(0px);
+	4、如何给我们的元素添加边框线 border:粗细 风格 颜色;
+	5、如何在页面当中插入一张图片  <img src="地址"/>
+	6、绝对定位和相对定位 来控制按扭的位置
+
+-->
+ </body>
+</html>

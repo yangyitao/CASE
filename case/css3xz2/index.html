@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--声明当前页面的编码集charset=gbk，bg2312中文编码，utf-8国际编码-->
+  <meta charset="UTF-8">
+  <!--当前页面的三要素-->
+  <title>高端大气的模特展示页</title>
+  <meta name="Keywords" content="关键词，关键词">
+  <meta name="Description" content="描述">
+  <!--css，js-->
+  <style>
+*{margin:0;padding:0}
+body{background:url(images/bj.png) repeat;font-family:"微软雅黑"}
+ul{list-style:none}
+.content{width:520px;margin:50px auto 0;}
+.content ul li{width:520px;height:100px;margin-top:5px;background:#fff;position:relative;border-left:10px solid #252525;
+               transition:all 500ms ease-in-out;/*all对什么属性进行过度滑动（对所有属性），500ms过度速度，在多长时间内完成过度（数值越大，过度速度越慢，反之..），ease-in-out用什么方法进行过度平滑（实现效果的方式） */
+              }
+.content ul li a{color:#252525;text-decoration:none;display:block}
+/*内容布局效果*/
+.text{position:absolute;top:20px;left:20px;width:500px;text-align:center;}
+.text_h1{font-size:26px;margin-bottom:2px;transition: all 500ms linear;}
+.text_h2{font-size:14px;transition: all 500ms linear;}
+/*划过显示效果*/
+.content ul li:hover{background:#000;border-color:#ff3636;
+                     text-shadow:0px 0px 10px #fff004;/*水平阴影位置，垂直阴影位置，模糊距离，阴影颜色*/}
+.content ul li:hover .text_h1{color:#fff;font-size:14px;}
+.content ul li:hover .text_h2{color:#fff;font-size:26px;}
+
+  </style>
+ </head>
+
+ <body>
+  <div class="content">
+   <ul>
+	   <li>
+	      <a href="#" target="_blank">
+			   <div class="text">
+			   <h1 class="text_h1">欢迎大家来到网页制作课程！</h1>
+			   <h2 class="text_h2">欢迎大家来到网页制作课程！</h2>
+			   </div>
+		  </a>
+	   </li>
+	   <li>
+	      <a href="#" target="_blank">
+			   <div class="text">
+			   <h1 class="text_h1">欢迎大家来到网页制作课程！</h1>
+			   <h2 class="text_h2">欢迎大家来到网页制作课程！</h2>
+			   </div>
+		  </a>
+	   </li>
+	   <li>
+	      <a href="#" target="_blank">
+			   <div class="text">
+			   <h1 class="text_h1">欢迎大家来到网页制作课程！</h1>
+			   <h2 class="text_h2">欢迎大家来到网页制作课程！</h2>
+			   </div>
+		  </a>
+	   </li>
+	   <li>
+	      <a href="#" target="_blank">
+			   <div class="text">
+			   <h1 class="text_h1">欢迎大家来到网页制作课程！</h1>
+			   <h2 class="text_h2">欢迎大家来到网页制作课程！</h2>
+			   </div>
+		  </a>
+	   </li>
+  </ul>
+  </div>
+ </body>
+</html>

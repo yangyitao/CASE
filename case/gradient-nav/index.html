@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<title>vip课</title>
+		<style>
+			*{margin:0;padding:0;}
+			body{ background:url(images/bg_title.jpg) repeat-x,url(images/bg.jpg);}
+			nav{width:916px; height:46px; margin:50px auto 0; border-radius:5px;box-shadow:0px 0px 30px #fff;
+				background:-webkit-linear-gradient(top,rgba(41,41,41,0.75) 0%,rgba(54,54,54,0.72) 50%,rgba(24,23,23,0.94) 51%);}
+			nav ul li{list-style:none; float:left; width:130px; height:46px; border-right:1px solid #000;
+				text-align:center; line-height:46px;}
+			nav ul li:hover{background:rgba(10,5,5,.5);}
+			nav ul li.first{border-radius:5px 0 0 5px;}
+			nav ul li.last{border:none; border-radius:0px 5px 5px 0px;}
+			nav ul li a{color:#fff; font-size:14px; text-decoration:none; font-family:"微软雅黑";}
+			nav .hid1{height:0; overflow:hidden; -webkit-transition:.5s;}
+			nav .hid li{border:none; background:rgba(10,5,5,.45);}
+			nav .hid li:hover{ background:rgba(10,5,5,.7)}
+
+			nav ul li:hover .hid1{height:138px;}
+			nav ul li:hover .hid2{display:block; -webkit-animation:anim 1s;}
+			nav .hid2{display:none;}
+			section{width:916px; height:500px; background:#fff; border-radius:10px; margin:50px auto 40px;
+				box-shadow:0 0 5px #ccc;}
+			@-webkit-keyframes anim{
+				form{-webkit-transform:rotateY(0deg); opacity:0;}
+				to{-webkit-transform:rotateY(360deg); opacity:1;}
+			}
+			p.Copy{height:50px; color:#ccc; font-size:14px;text-align:center;font-family:"微软雅黑";}
+			p.Copy a{color:#ccc;text-decoration:none;}
+			p.Copy a:hover{color:#fff;}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li class="first">
+					<a href="">前端设计</a>
+					<ul class="hid hid1">
+						<li><a href="">HTML5</a></li>
+						<li><a href="">CSS3</a></li>
+						<li><a href="">JavaScript</a></li>
+					</ul>
+				</li>
+				<li><a href="">网页设计</a></li>
+				<li><a href="">动画设计</a></li>
+				<li>
+					<a href="">编程语言</a>
+					<ul class="hid hid2">
+						<li><a href="">C++</a></li>
+						<li><a href="">JAVA</a></li>
+						<li><a href="">PHP</a></li>
+					</ul>
+				</li>
+				<li><a href="">手机开发</a></li>
+				<li><a href="">开源程序</a></li>
+				<li class="last"><a href="">我的博客</a></li>
+			</ul>
+		</nav>
+		<section></section>
+		<p class="Copy">版权所有:湖南潭教育咨询机构(学院）.网页制教育部研发  <a href="">学院官网</a></p>
+	</body>
+</html>
